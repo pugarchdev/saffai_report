@@ -1529,7 +1529,7 @@
               const pulseDot = document.getElementById('iot-pulse-dot');
 
               if (latestData && latestData.success && latestData.data && latestData.data.length > 0) {
-                if (statusText) statusText.innerText = 'IoT LIVE CONNECTED (VERCEL)';
+                if (statusText) statusText.innerText = 'IoT LIVE CONNECTED ';
                 if (statusBadge) {
                   statusBadge.className = 'inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold border border-emerald-200';
                 }
@@ -1625,7 +1625,7 @@
                   }
                 }
               } else {
-                if (statusText) statusText.innerText = 'IoT LIVE SYNCED (VERCEL)';
+                if (statusText) statusText.innerText = 'IoT LIVE SYNCED ';
               }
             }
 
