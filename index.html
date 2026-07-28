@@ -1303,44 +1303,44 @@
           <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl text-white border border-slate-700 shadow-sm transition-all hover:border-slate-600">
             <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Current NH3 Level</div>
             <div class="flex items-baseline gap-2">
-              <span id="iot-kpi-current-nh3" class="text-3xl font-extrabold text-red-400">63.0</span>
+              <span id="iot-kpi-current-nh3" class="text-3xl font-extrabold text-slate-300 animate-pulse">--</span>
               <span class="text-xs text-slate-400 font-semibold">PPM</span>
             </div>
-            <div id="iot-kpi-current-status" class="text-[11px] text-red-400 font-semibold mt-2">
-              <i class="fa-solid fa-circle-exclamation mr-1"></i> Needs Fan Exhaust
+            <div id="iot-kpi-current-status" class="text-[11px] text-slate-400 font-semibold mt-2">
+              <i class="fa-solid fa-spinner animate-spin mr-1"></i> Fetching Live Telemetry...
             </div>
           </div>
 
           <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl text-white border border-slate-700 shadow-sm transition-all hover:border-slate-600">
             <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Peak Odor Today</div>
             <div class="flex items-baseline gap-2">
-              <span id="iot-kpi-peak-today" class="text-3xl font-extrabold text-amber-400">82.0</span>
+              <span id="iot-kpi-peak-today" class="text-3xl font-extrabold text-slate-300 animate-pulse">--</span>
               <span class="text-xs text-slate-400 font-semibold">PPM</span>
             </div>
-            <div id="iot-kpi-peak-status" class="text-[11px] text-amber-400 font-semibold mt-2">
-              <i class="fa-solid fa-triangle-exclamation mr-1"></i> Peak Spike Today
+            <div id="iot-kpi-peak-status" class="text-[11px] text-slate-400 font-semibold mt-2">
+              <i class="fa-solid fa-clock mr-1"></i> Calculating Today's Peak...
             </div>
           </div>
 
           <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl text-white border border-slate-700 shadow-sm transition-all hover:border-slate-600">
             <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">7-Day Avg Odor</div>
             <div class="flex items-baseline gap-2">
-              <span id="iot-kpi-7day-avg" class="text-3xl font-extrabold text-sky-400">48.3</span>
+              <span id="iot-kpi-7day-avg" class="text-3xl font-extrabold text-slate-300 animate-pulse">--</span>
               <span class="text-xs text-slate-400 font-semibold">PPM</span>
             </div>
-            <div id="iot-kpi-7day-status" class="text-[11px] text-sky-400 font-semibold mt-2">
-              <i class="fa-solid fa-chart-line mr-1"></i> Overall Washroom Health
+            <div id="iot-kpi-7day-status" class="text-[11px] text-slate-400 font-semibold mt-2">
+              <i class="fa-solid fa-chart-line mr-1"></i> Computing Baseline...
             </div>
           </div>
 
           <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl text-white border border-slate-700 shadow-sm transition-all hover:border-slate-600">
             <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Critical Incidents (>60 PPM)</div>
             <div class="flex items-baseline gap-2">
-              <span id="iot-kpi-critical-incidents" class="text-3xl font-extrabold text-red-400">26</span>
+              <span id="iot-kpi-critical-incidents" class="text-3xl font-extrabold text-slate-300 animate-pulse">--</span>
               <span class="text-xs text-slate-400 font-semibold">Incidents</span>
             </div>
-            <div id="iot-kpi-critical-status" class="text-[11px] text-red-400 font-semibold mt-2">
-              <i class="fa-solid fa-fan mr-1"></i> Auto Fans Triggered
+            <div id="iot-kpi-critical-status" class="text-[11px] text-slate-400 font-semibold mt-2">
+              <i class="fa-solid fa-shield mr-1"></i> Monitoring Thresholds...
             </div>
           </div>
         </div>
@@ -1398,9 +1398,10 @@
             let fifteenChartInstance = null;
             let weeklyChartInstance = null;
 
-            const HOSTED_API = 'https://iot-repo-wyd6.vercel.app';
+            const HOSTED_API = 'https://iot-repo-teal.vercel.app';
             const API_ENDPOINTS = [
               HOSTED_API,
+              'https://iot-repo-wyd6.vercel.app',
               'http://localhost:3000'
             ];
 
@@ -1564,13 +1565,37 @@
                   const incidents = parseInt(kpis.critical_incidents || 25, 10);
 
                   const peakEl = document.getElementById('iot-kpi-peak-today');
-                  if (peakEl) peakEl.innerText = peakVal.toFixed(1);
+                  const peakStatus = document.getElementById('iot-kpi-peak-status');
+                  if (peakEl) {
+                    peakEl.innerText = peakVal.toFixed(1);
+                    peakEl.className = 'text-3xl font-extrabold text-amber-400';
+                  }
+                  if (peakStatus) {
+                    peakStatus.className = 'text-[11px] text-amber-400 font-semibold mt-2';
+                    peakStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation mr-1"></i> Highest Concentration Recorded';
+                  }
 
                   const avgEl = document.getElementById('iot-kpi-7day-avg');
-                  if (avgEl) avgEl.innerText = avgVal.toFixed(1);
+                  const avgStatus = document.getElementById('iot-kpi-7day-status');
+                  if (avgEl) {
+                    avgEl.innerText = avgVal.toFixed(1);
+                    avgEl.className = 'text-3xl font-extrabold text-sky-400';
+                  }
+                  if (avgStatus) {
+                    avgStatus.className = 'text-[11px] text-sky-400 font-semibold mt-2';
+                    avgStatus.innerHTML = '<i class="fa-solid fa-chart-line mr-1"></i> Overall Washroom Health';
+                  }
 
                   const incEl = document.getElementById('iot-kpi-critical-incidents');
-                  if (incEl) incEl.innerText = incidents;
+                  const incStatus = document.getElementById('iot-kpi-critical-status');
+                  if (incEl) {
+                    incEl.innerText = incidents;
+                    incEl.className = 'text-3xl font-extrabold text-red-400';
+                  }
+                  if (incStatus) {
+                    incStatus.className = 'text-[11px] text-red-400 font-semibold mt-2';
+                    incStatus.innerHTML = '<i class="fa-solid fa-fan mr-1"></i> Auto Fans Triggered (' + incidents + ' Times)';
+                  }
                 }
 
                 // 3. Dynamic Chart Updates
