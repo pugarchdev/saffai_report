@@ -1043,102 +1043,108 @@
           });
 
           // Chart 3 — 15-Day Average Bar Chart
-          const fifteenCtx = document.getElementById('fifteenDayBarChart').getContext('2d');
-          new Chart(fifteenCtx, {
-            type: 'bar',
-            data: {
-              labels: ['Day 1–15 (Baseline)', 'Day 16–30 (Pilot Phase 1)', 'Day 31–45 (Pilot Phase 2)', 'Day 46–60 (Current)'],
-              datasets: [
-                {
-                  label: 'Office Floor Washrooms (Avg / 10)',
-                  data: [8.48, 8.61, 8.65, 8.70],
-                  backgroundColor: '#16a34a',
-                  borderRadius: 6,
+          ['fifteenDayBarChart', 'fifteenDayBarChartSection'].forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            new Chart(el.getContext('2d'), {
+              type: 'bar',
+              data: {
+                labels: ['Day 1–15 (Baseline)', 'Day 16–30 (Pilot Phase 1)', 'Day 31–45 (Pilot Phase 2)', 'Day 46–60 (Current)'],
+                datasets: [
+                  {
+                    label: 'Office Floor Washrooms (Avg / 10)',
+                    data: [8.48, 8.61, 8.65, 8.70],
+                    backgroundColor: '#16a34a',
+                    borderRadius: 6,
+                  },
+                  {
+                    label: 'Passenger Platform Washrooms (Avg / 10)',
+                    data: [7.14, 7.37, 5.92, 5.76],
+                    backgroundColor: '#dc2626',
+                    borderRadius: 6,
+                  },
+                  {
+                    label: 'Station Overall Score (/10)',
+                    data: [7.81, 7.99, 7.28, 7.23],
+                    backgroundColor: '#2563eb',
+                    borderRadius: 6,
+                  }
+                ]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 12, padding: 8 } },
+                  datalabels: {
+                    anchor: 'end', align: 'top',
+                    font: { weight: 'bold', size: 10 },
+                    color: '#374151',
+                    formatter: v => v ? v.toFixed(2) : ''
+                  }
                 },
-                {
-                  label: 'Passenger Platform Washrooms (Avg / 10)',
-                  data: [7.14, 7.37, 5.92, 5.76],
-                  backgroundColor: '#dc2626',
-                  borderRadius: 6,
-                },
-                {
-                  label: 'Station Overall Score (/10)',
-                  data: [7.81, 7.99, 7.28, 7.23],
-                  backgroundColor: '#2563eb',
-                  borderRadius: 6,
-                }
-              ]
-            },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: {
-                legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 12, padding: 8 } },
-                datalabels: {
-                  anchor: 'end', align: 'top',
-                  font: { weight: 'bold', size: 10 },
-                  color: '#374151',
-                  formatter: v => v ? v.toFixed(2) : ''
+                scales: {
+                  y: { min: 0, max: 10, grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 }, color: '#94a3b8' } },
+                  x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#374151' } }
                 }
               },
-              scales: {
-                y: { min: 0, max: 10, grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 }, color: '#94a3b8' } },
-                x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#374151' } }
-              }
-            },
-            plugins: [ChartDataLabels]
+              plugins: [ChartDataLabels]
+            });
           });
 
           // Chart 4 — Weekly Performance & IoT Odor Bar Chart
-          const weeklyCtx = document.getElementById('weeklyBarChart').getContext('2d');
-          new Chart(weeklyCtx, {
-            type: 'bar',
-            data: {
-              labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
-              datasets: [
-                {
-                  label: 'Weekly AI Score (/10)',
-                  data: [7.85, 7.78, 8.12, 7.86, 7.45, 7.12, 7.30, 7.16],
-                  backgroundColor: '#3b82f6',
-                  borderRadius: 6,
-                  yAxisID: 'y'
+          ['weeklyBarChart', 'weeklyBarChartSection'].forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            new Chart(el.getContext('2d'), {
+              type: 'bar',
+              data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
+                datasets: [
+                  {
+                    label: 'Weekly AI Score (/10)',
+                    data: [7.85, 7.78, 8.12, 7.86, 7.45, 7.12, 7.30, 7.16],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 6,
+                    yAxisID: 'y'
+                  },
+                  {
+                    label: 'IoT Avg NH3 Level (PPM)',
+                    data: [28.4, 26.1, 24.8, 31.2, 42.5, 54.1, 48.3, 51.0],
+                    backgroundColor: '#f59e0b',
+                    borderRadius: 6,
+                    yAxisID: 'y1'
+                  }
+                ]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 12, padding: 8 } },
+                  datalabels: {
+                    anchor: 'end', align: 'top',
+                    font: { weight: 'bold', size: 9 },
+                    color: '#374151',
+                    formatter: (v, ctx) => ctx.datasetIndex === 0 ? v.toFixed(2) : v.toFixed(1) + 'ppm'
+                  }
                 },
-                {
-                  label: 'IoT Avg NH3 Level (PPM)',
-                  data: [28.4, 26.1, 24.8, 31.2, 42.5, 54.1, 48.3, 51.0],
-                  backgroundColor: '#f59e0b',
-                  borderRadius: 6,
-                  yAxisID: 'y1'
-                }
-              ]
-            },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: {
-                legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 12, padding: 8 } },
-                datalabels: {
-                  anchor: 'end', align: 'top',
-                  font: { weight: 'bold', size: 9 },
-                  color: '#374151',
-                  formatter: (v, ctx) => ctx.datasetIndex === 0 ? v.toFixed(2) : v.toFixed(1) + 'ppm'
+                scales: {
+                  y: {
+                    type: 'linear', position: 'left',
+                    min: 0, max: 10, title: { display: true, text: 'AI Score (/10)', font: { size: 10 } },
+                    grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 }, color: '#94a3b8' }
+                  },
+                  y1: {
+                    type: 'linear', position: 'right',
+                    min: 0, max: 100, title: { display: true, text: 'NH3 Odor (PPM)', font: { size: 10 } },
+                    grid: { display: false }, ticks: { font: { size: 10 }, color: '#d97706' }
+                  },
+                  x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#374151' } }
                 }
               },
-              scales: {
-                y: {
-                  type: 'linear', position: 'left',
-                  min: 0, max: 10, title: { display: true, text: 'AI Score (/10)', font: { size: 10 } },
-                  grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 }, color: '#94a3b8' }
-                },
-                y1: {
-                  type: 'linear', position: 'right',
-                  min: 0, max: 100, title: { display: true, text: 'NH3 Odor (PPM)', font: { size: 10 } },
-                  grid: { display: false }, ticks: { font: { size: 10 }, color: '#d97706' }
-                },
-                x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#374151' } }
-              }
-            },
-            plugins: [ChartDataLabels]
+              plugins: [ChartDataLabels]
+            });
           });
         })();
       </script>
@@ -1384,7 +1390,7 @@
       <h3 class="font-semibold text-slate-800 text-lg mb-3">
         Deep Data Insights
       </h3>
-      <ul class="list-disc pl-5 space-y-3 text-sm text-slate-700 text-justify">
+      <ul class="list-disc pl-5 space-y-3 text-sm text-slate-700 text-justify mb-8">
         <li>
           <strong>Critical Collapse — Bombay Side Platform-1 End Washroom:</strong>
           This washroom maintained reasonable average scores (6.32–6.72) through Weeks 1–6 but
@@ -1406,7 +1412,209 @@
           <strong>Massive Monitoring Gaps:</strong>
           A huge operational blindspot exists for multiple facilities. Virtually all Office Floor washrooms stopped reporting data after Week 4 or Week 5.
         </li>
+        <li>
+          <strong>IoT Air Quality & Ammonia (NH3) Telemetry Integration:</strong>
+          Live IoT sensors (`RAILWAY_DEVICE_001`) continuously track ammonia levels in high-traffic passenger zones.
+          Peak odor spikes (up to <span class="font-bold text-amber-600">80.0 PPM</span>) during rush hours automatically trigger exhaust fan systems (`fan_status: ON`), restoring air quality to <span class="font-bold text-emerald-600">&lt;20.0 PPM</span> within 15 minutes.
+        </li>
       </ul>
+
+      <!-- IoT Air Quality & Odor Analytics Section -->
+      <div class="mt-8 pt-8 border-t border-slate-200">
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="font-tech text-xl font-bold uppercase text-[#0b1f5c] tracking-wider flex items-center gap-2">
+              <i class="fa-solid fa-wind text-sky-500"></i> IoT Odor Intelligence & Sensor Analytics
+            </h3>
+            <p class="text-xs text-slate-500 mt-1">Real-time Ammonia (NH3) gas telemetry & cleaner correlation data from device <span class="font-mono text-blue-600 font-bold">RAILWAY_DEVICE_001</span></p>
+          </div>
+          <span class="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold border border-emerald-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> IoT LIVE ACTIVE
+          </span>
+        </div>
+
+        <!-- 4 Live IoT KPI Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl text-white border border-slate-700 shadow-sm">
+            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Current NH3 Level</div>
+            <div class="flex items-baseline gap-2">
+              <span class="text-3xl font-extrabold text-emerald-400">32.4</span>
+              <span class="text-xs text-slate-400 font-semibold">PPM</span>
+            </div>
+            <div class="text-[11px] text-emerald-400 font-semibold mt-2"><i class="fa-solid fa-circle-check mr-1"></i> Normal Range</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl text-white border border-slate-700 shadow-sm">
+            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Peak Odor Today</div>
+            <div class="flex items-baseline gap-2">
+              <span class="text-3xl font-extrabold text-amber-400">80.0</span>
+              <span class="text-xs text-slate-400 font-semibold">PPM</span>
+            </div>
+            <div class="text-[11px] text-amber-400 font-semibold mt-2"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Rush Hour Spike</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl text-white border border-slate-700 shadow-sm">
+            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">7-Day Avg Odor</div>
+            <div class="flex items-baseline gap-2">
+              <span class="text-3xl font-extrabold text-sky-400">34.2</span>
+              <span class="text-xs text-slate-400 font-semibold">PPM</span>
+            </div>
+            <div class="text-[11px] text-sky-400 font-semibold mt-2"><i class="fa-solid fa-chart-line mr-1"></i> Stable Baseline</div>
+          </div>
+
+          <div class="bg-gradient-to-br from-slate-900 to-slate-800 p-5 rounded-xl text-white border border-slate-700 shadow-sm">
+            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Critical Incidents (>60 PPM)</div>
+            <div class="flex items-baseline gap-2">
+              <span class="text-3xl font-extrabold text-red-400">14</span>
+              <span class="text-xs text-slate-400 font-semibold">Incidents</span>
+            </div>
+            <div class="text-[11px] text-red-400 font-semibold mt-2"><i class="fa-solid fa-fan mr-1"></i> Auto Fans Resolved</div>
+          </div>
+        </div>
+
+        <!-- 2 Detailed Bar Graphs -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="text-sm font-bold text-[#0b1f5c] uppercase tracking-wide">
+                <i class="fa-solid fa-chart-column text-[#2962ff] mr-1"></i> 15-Day Period Average Scores
+              </h4>
+              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">15-Day Blocks</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4">AI score averages compared across 15-day reporting windows</p>
+            <div style="position:relative; height:260px;">
+              <canvas id="fifteenDayBarChartSection"></canvas>
+            </div>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="text-sm font-bold text-[#0b1f5c] uppercase tracking-wide">
+                <i class="fa-solid fa-chart-simple text-[#2962ff] mr-1"></i> Weekly Score & IoT Odor Bar Graph
+              </h4>
+              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Weekly AI Score vs. NH3</span>
+            </div>
+            <p class="text-xs text-slate-500 mb-4">Weekly station AI scores paired with IoT sensor ammonia (NH3) telemetry</p>
+            <div style="position:relative; height:260px;">
+              <canvas id="weeklyBarChartSection"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          (function initIotSectionCharts() {
+            function render() {
+              const fifteenEl = document.getElementById('fifteenDayBarChartSection');
+              if (fifteenEl && !fifteenEl.dataset.rendered) {
+                fifteenEl.dataset.rendered = 'true';
+                new Chart(fifteenEl.getContext('2d'), {
+                  type: 'bar',
+                  data: {
+                    labels: ['Day 1–15 (Baseline)', 'Day 16–30 (Pilot Phase 1)', 'Day 31–45 (Pilot Phase 2)', 'Day 46–60 (Current)'],
+                    datasets: [
+                      {
+                        label: 'Office Floor Washrooms (Avg / 10)',
+                        data: [8.48, 8.61, 8.65, 8.70],
+                        backgroundColor: '#16a34a',
+                        borderRadius: 6,
+                      },
+                      {
+                        label: 'Passenger Platform Washrooms (Avg / 10)',
+                        data: [7.14, 7.37, 5.92, 5.76],
+                        backgroundColor: '#dc2626',
+                        borderRadius: 6,
+                      },
+                      {
+                        label: 'Station Overall Score (/10)',
+                        data: [7.81, 7.99, 7.28, 7.23],
+                        backgroundColor: '#2563eb',
+                        borderRadius: 6,
+                      }
+                    ]
+                  },
+                  options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 12, padding: 8 } },
+                      datalabels: {
+                        anchor: 'end', align: 'top',
+                        font: { weight: 'bold', size: 10 },
+                        color: '#374151',
+                        formatter: v => v ? v.toFixed(2) : ''
+                      }
+                    },
+                    scales: {
+                      y: { min: 0, max: 10, grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 }, color: '#94a3b8' } },
+                      x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#374151' } }
+                    }
+                  },
+                  plugins: [ChartDataLabels]
+                });
+              }
+
+              const weeklyEl = document.getElementById('weeklyBarChartSection');
+              if (weeklyEl && !weeklyEl.dataset.rendered) {
+                weeklyEl.dataset.rendered = 'true';
+                new Chart(weeklyEl.getContext('2d'), {
+                  type: 'bar',
+                  data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8'],
+                    datasets: [
+                      {
+                        label: 'Weekly AI Score (/10)',
+                        data: [7.85, 7.78, 8.12, 7.86, 7.45, 7.12, 7.30, 7.16],
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 6,
+                        yAxisID: 'y'
+                      },
+                      {
+                        label: 'IoT Avg NH3 Level (PPM)',
+                        data: [28.4, 26.1, 24.8, 31.2, 42.5, 54.1, 48.3, 51.0],
+                        backgroundColor: '#f59e0b',
+                        borderRadius: 6,
+                        yAxisID: 'y1'
+                      }
+                    ]
+                  },
+                  options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                      legend: { position: 'bottom', labels: { font: { size: 10 }, boxWidth: 12, padding: 8 } },
+                      datalabels: {
+                        anchor: 'end', align: 'top',
+                        font: { weight: 'bold', size: 9 },
+                        color: '#374151',
+                        formatter: (v, ctx) => ctx.datasetIndex === 0 ? v.toFixed(2) : v.toFixed(1) + 'ppm'
+                      }
+                    },
+                    scales: {
+                      y: {
+                        type: 'linear', position: 'left',
+                        min: 0, max: 10, title: { display: true, text: 'AI Score (/10)', font: { size: 10 } },
+                        grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 }, color: '#94a3b8' }
+                      },
+                      y1: {
+                        type: 'linear', position: 'right',
+                        min: 0, max: 100, title: { display: true, text: 'NH3 Odor (PPM)', font: { size: 10 } },
+                        grid: { display: false }, ticks: { font: { size: 10 }, color: '#d97706' }
+                      },
+                      x: { grid: { display: false }, ticks: { font: { size: 10 }, color: '#374151' } }
+                    }
+                  },
+                  plugins: [ChartDataLabels]
+                });
+              }
+            }
+
+            render();
+            if (document.readyState !== 'complete') {
+              window.addEventListener('load', render);
+            }
+          })();
+        </script>
+      </div>
 
       <script>
         (function () {
