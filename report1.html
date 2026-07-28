@@ -1,0 +1,2343 @@
+<!doctype html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>SAAFAI AI - Comprehensive Industrial Impact Report </title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            tech: ["Rajdhani", "sans-serif"],
+          },
+          colors: {
+            railway: {
+              50: "#f0f7ff",
+              100: "#e0f0fe",
+              200: "#bae2fd",
+              300: "#7ccbfd",
+              400: "#38b0f8",
+              500: "#0ea3e9",
+              600: "#0284c7",
+              700: "#0369a1",
+              800: "#075985",
+              900: "#0c4a6e",
+              950: "#082f49",
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+
+      body {
+        background-color: #fff !important;
+        color: #000 !important;
+        font-size: 11pt;
+        padding-top: 0 !important;
+      }
+
+      .page-break {
+        page-break-before: always;
+      }
+
+      .card-shadow {
+        box-shadow: none !important;
+        border: 1px solid #e2e8f0 !important;
+      }
+
+      .print-light-bg {
+        background-color: #f8fafc !important;
+        color: #0f172a !important;
+      }
+
+      .print-dark-text {
+        color: #0f172a !important;
+      }
+
+      .print-muted-text {
+        color: #475569 !important;
+      }
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    section,
+    #cover-page {
+      scroll-margin-top: 5rem;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-railway-500 selection:text-white pt-14 print:pt-0">
+  <nav class="fixed top-0 left-0 right-0 h-14 bg-slate-900 border-b border-slate-800 z-50 no-print shadow-md">
+    <div class="max-w-7xl mx-auto h-full px-4 flex items-center gap-4">
+      <a class="text-sky-400 font-tech font-bold text-lg tracking-wider shrink-0 flex items-center gap-1.5 hover:text-sky-300 transition-colors"
+        href="#cover-page">
+        <i class="fa-solid fa-robot"></i> SAAFAI
+      </a>
+      <div class="h-6 w-px bg-slate-700 shrink-0"></div>
+      <div
+        class="flex items-center gap-2 overflow-x-auto h-full py-2 hide-scrollbar font-medium text-xs tracking-wide uppercase whitespace-nowrap">
+        <a class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
+          href="#org">1. Organization</a>
+        <a class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
+          href="#system">2. Platform</a>
+        <a class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
+          href="#infrastructure">3. Infrastructure</a>
+        <a class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
+          href="#kpi">4. KPIs</a>
+        <a class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
+          href="#trends">5. Trends</a>
+        <a class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
+          href="#washrooms">6. Washrooms</a>
+        <a class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
+          href="#cleaners">7. Cleaners</a>
+        <a class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
+          href="#before-after">8. Visual Impact</a>
+        <a class="px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-all"
+          href="#impact">9. ROI</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-5xl mx-auto my-8 bg-white shadow-xl rounded-xl overflow-hidden border border-slate-200 card-shadow"
+    id="cover-page">
+    <div
+      class="p-8 sm:p-12 md:p-16 text-center border-b border-slate-800 bg-slate-900 text-white relative overflow-hidden print-light-bg">
+      <div
+        class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:2rem_2rem]">
+      </div>
+
+      <div
+        class="relative z-10 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-sky-400 text-sm font-semibold tracking-wider uppercase font-tech mb-6 print-dark-text">
+        <i class="fa-solid fa-train text-sky-400 print-dark-text"></i> Indian
+        Railways • SECR Zone
+      </div>
+
+      <h1
+        class="relative z-10 font-tech text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight print-dark-text">
+        SAAFAI AI-BASED SANITATION<br /><span class="text-sky-400">MONITORING SYSTEM</span>
+      </h1>
+
+      <p
+        class="relative z-10 mt-4 text-xl md:text-2xl font-medium text-slate-300 max-w-3xl mx-auto uppercase tracking-wide print-muted-text">
+        Pilot Project Impact Assessment & Operational Analytics Report
+      </p>
+    </div>
+
+    <div
+      class="px-8 sm:px-16 py-10 bg-slate-50/70 border-b border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-8 font-medium">
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <div
+            class="w-8 h-8 rounded-lg bg-railway-100 text-railway-700 flex items-center justify-center shrink-0 mt-0.5">
+            <i class="fa-solid fa-circle-info"></i>
+          </div>
+          <div>
+            <span class="block text-xs uppercase text-slate-400 font-bold tracking-wider">Project Name</span>
+            <span class="text-slate-800 text-base font-semibold">SAAFAI Smart Sanitation Monitoring Pilot</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div
+            class="w-8 h-8 rounded-lg bg-railway-100 text-railway-700 flex items-center justify-center shrink-0 mt-0.5">
+            <i class="fa-solid fa-map"></i>
+          </div>
+          <div>
+            <span class="block text-xs uppercase text-slate-400 font-bold tracking-wider">Railway Zone & Division</span>
+            <span class="text-slate-800 text-base font-semibold">Nagpur Railway Station
+              Division</span>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <div
+            class="w-8 h-8 rounded-lg bg-railway-100 text-railway-700 flex items-center justify-center shrink-0 mt-0.5">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div>
+            <span class="block text-xs uppercase text-slate-400 font-bold tracking-wider">Reporting Period</span>
+            <span class="text-slate-800 text-base font-semibold">15 May 2026 – 15 July 2026</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div
+            class="w-8 h-8 rounded-lg bg-railway-100 text-railway-700 flex items-center justify-center shrink-0 mt-0.5">
+            <i class="fa-solid fa-building-shield"></i>
+          </div>
+          <div>
+            <span class="block text-xs uppercase text-slate-400 font-bold tracking-wider">Submitted To</span>
+            <span class="text-slate-800 text-base font-semibold">Station Administration & SECR Higher Authorities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="max-w-5xl mx-auto space-y-8 pb-24 px-4 sm:px-0">
+    <section class="bg-white p-8 sm:p-12 rounded-xl shadow-md border border-slate-200 card-shadow page-break" id="org">
+
+      <!-- Original Section Header -->
+      <h2
+        class="font-tech text-2xl font-bold uppercase text-railway-900 tracking-wider mb-2 flex items-center gap-3 pb-2 border-b-2 border-railway-600">
+        <span class="w-2 h-6 bg-railway-600 rounded-full"></span> 1. Organization Overview
+      </h2>
+      <div class="text-slate-500 mb-8 text-sm font-medium">Organizational Structure, Coverage & Washroom Performance
+        Summary</div>
+
+      <!-- Intro Cards -->
+      <div class="flex flex-col md:flex-row gap-4 mb-8">
+        <div class="bg-white border border-gray-200 rounded-lg p-4 flex-2 flex gap-4 md:w-1/2 shadow-sm">
+          <div class="text-3xl text-[#2962ff]">🏛️</div>
+          <div>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              <strong class="text-black">SAAFAI AI-Based Sanitation Monitoring System</strong> is implemented at Nagpur
+              Railway Station (KP), Nagpur Railway Stationto transform conventional sanitation monitoring
+              into an AI-enabled, data-driven operations system.
+            </p>
+          </div>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-4 flex gap-4 md:w-1/4 shadow-sm">
+          <div class="text-3xl text-[#2962ff]">📍</div>
+          <div>
+            <div class="text-xs font-bold text-[#0b1f5c] mb-1 uppercase">Location</div>
+            <p class="text-sm text-gray-700">Nagpur Railway Station (KP)<br></p>
+          </div>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-4 flex gap-4 md:w-1/4 shadow-sm">
+          <div class="text-3xl text-[#2962ff]">📅</div>
+          <div>
+            <div class="text-xs font-bold text-[#0b1f5c] mb-1 uppercase">Analysis Period</div>
+            <p class="text-sm text-gray-700">May 20 - Jul 08, 2025<br>(Last 7 Weeks)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Two-Column Layout -->
+      <div class="flex flex-col lg:flex-row gap-6 mb-8">
+
+        <!-- Metrics Section -->
+        <div class="flex-1 bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+          <h2 class="text-sm font-bold text-[#0b1f5c] mb-4 uppercase">Organization Metrics</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 h-[calc(100%-2rem)]">
+
+            <!-- Total Buildings -->
+            <div
+              class="text-center p-4 border border-gray-100 rounded-lg shadow-sm flex flex-col items-center justify-center gap-1">
+              <div class="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center mb-1">
+                <i class="fa-solid fa-building text-blue-600 text-lg"></i>
+              </div>
+              <div class="text-3xl font-bold text-blue-600">1</div>
+              <div class="text-xs font-semibold text-gray-500">Total Buildings</div>
+              <div class="w-8 h-1 rounded-full bg-blue-500 mt-1"></div>
+            </div>
+
+            <!-- Total Washrooms -->
+            <div
+              class="text-center p-4 border border-gray-100 rounded-lg shadow-sm flex flex-col items-center justify-center gap-1">
+              <div class="w-11 h-11 rounded-full bg-purple-100 flex items-center justify-center mb-1">
+                <i class="fa-solid fa-restroom text-purple-600 text-lg"></i>
+              </div>
+              <div class="text-3xl font-bold text-purple-600">13</div>
+              <div class="text-xs font-semibold text-gray-500">Total Washrooms</div>
+              <div class="w-8 h-1 rounded-full bg-purple-500 mt-1"></div>
+            </div>
+
+            <!-- Active Staff (Cleaners) -->
+            <div
+              class="text-center p-4 border border-gray-100 rounded-lg shadow-sm flex flex-col items-center justify-center gap-1">
+              <div class="w-11 h-11 rounded-full bg-orange-100 flex items-center justify-center mb-1">
+                <i class="fa-solid fa-users text-orange-500 text-lg"></i>
+              </div>
+              <div class="text-3xl font-bold text-orange-500">3</div>
+              <div class="text-xs font-semibold text-gray-500">Active Staff (Cleaners)</div>
+              <div class="w-8 h-1 rounded-full bg-orange-500 mt-1"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="flex-[1.5] bg-white border border-gray-200 rounded-lg p-5 flex flex-col shadow-sm">
+          <h2 class="text-sm font-bold text-[#0b1f5c] mb-2 uppercase">Washroom Performance Summary (AI Hygiene Score)
+          </h2>
+          <div class="flex justify-between text-xs text-gray-500 mb-5 border-b border-gray-100 pb-2">
+            <span>All Active Washrooms Ranked by Average Rating</span>
+            <span>Score (/10)</span>
+          </div>
+
+          <div id="washroom-bar-chart" class="flex-1 flex flex-col justify-center space-y-3.5"></div>
+
+          <div class="flex justify-between pl-52 pr-10 text-[10px] text-gray-400 mt-2">
+            <span>0</span><span>2</span><span>4</span><span>6</span><span>8</span><span>10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table Section -->
+      <h3 class="font-semibold text-slate-800 text-lg mb-4">Active Washroom Directory</h3>
+      <div class="overflow-hidden mb-6 rounded-lg border border-gray-200 shadow-sm">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead class="bg-[#0b1f5c] text-white">
+            <tr>
+              <th class="px-4 py-3 font-medium">Washroom Location</th>
+              <th class="px-4 py-3 font-medium">Zone</th>
+              <th class="px-4 py-3 font-medium text-center">AI Hygiene Score (/10)</th>
+              <th class="px-4 py-3 font-medium text-center">Performance Status</th>
+            </tr>
+          </thead>
+          <tbody id="washroom-table-body" class="text-gray-700 bg-white">
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Footer Stats & Legend -->
+      <div
+        class="flex flex-col md:flex-row justify-between items-start md:items-center border-t border-gray-200 pt-5 text-sm gap-6 bg-slate-50 p-4 rounded-lg">
+        <div>
+          <strong class="text-gray-900 block mb-1">STATION COVERAGE</strong>
+          <span class="text-gray-500 text-xs leading-tight block">SAAFAI monitoring system covers 100%<br>of the
+            identified washrooms at the station.</span>
+        </div>
+        <div class="flex items-center gap-3 bg-white px-4 py-2 rounded shadow-sm border border-gray-100">
+          <span class="text-3xl text-[#2962ff] font-bold">12</span>
+          <span class="text-[#0b1f5c] font-bold leading-tight text-sm">Active Washrooms<br><span
+              class="text-[10px] font-normal text-gray-500 uppercase tracking-wider">Under AI Monitoring</span></span>
+        </div>
+        <div>
+          <strong class="text-gray-900 block mb-2 text-xs">PERFORMANCE SCALE (AI HYGIENE SCORE /10)</strong>
+          <div class="flex flex-wrap gap-3 text-xs text-gray-700">
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#2e7d32]"></span> 8.5 - 10
+              (Exc)</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#4caf50]"></span> 7.0 -
+              8.4 (Good)</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#ed6c02]"></span> 5.0 -
+              6.9 (Avg)</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-[#d32f2f]"></span> 0.0 -
+              4.9 (Poor)</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <script>
+      (function() {
+        const activeWashrooms = [
+          { name: "Office Ground Floor Washroom 2", score: 8.78 },
+          { name: "Office Floor-1 - Washroom 1", score: 8.71 },
+          { name: "Office Floor-1 Washroom 2", score: 8.62 },
+          { name: "Office Floor-3 Washroom 2", score: 8.60 },
+          { name: "Office Floor-2 Washroom 1", score: 8.60 },
+          { name: "Office Floor-2 Washroom 2", score: 8.48 },
+          { name: "Office Ground Floor Washroom 1", score: 8.43 },
+          { name: "Sleeper class waiting room washroom", score: 8.31 },
+          { name: "Office Floor-3 Washroom 1", score: 8.28 },
+          { name: "Platform 1 near office", score: 6.66 },
+          { name: "Bombay Side Platform-1 End Washroom", score: 6.31 },
+          { name: "Handi Cap Platform-1", score: 6.23 }
+        ];
+
+        const barColors = ["#2962ff", "#2e7d32", "#7b1fa2", "#ed6c02", "#d32f2f", "#0288d1", "#c62828", "#3949ab", "#00897b", "#f4511e", "#8e24aa", "#e53935"];
+        
+        const chartContainer = document.getElementById("washroom-bar-chart");
+        const tableBody = document.getElementById("washroom-table-body");
+
+        let chartHtml = "";
+        let tableHtml = "";
+
+        activeWashrooms.forEach((w, idx) => {
+          // Chart Logic
+          let barColor = barColors[idx % barColors.length];
+          let widthPct = (w.score / 10) * 100;
+          let scoreColor = w.score >= 7.0 ? "#4caf50" : (w.score >= 5.0 ? "#ed6c02" : "#d32f2f");
+          
+          chartHtml += `
+            <div class="flex items-center text-[11px]">
+              <div class="flex items-center gap-1.5 w-48 shrink-0">
+                <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background-color: ${barColor}"></span>
+                <span class="font-medium truncate text-gray-700" title="${w.name}">${w.name}</span>
+              </div>
+              <div class="flex-1 h-2 bg-gray-100 rounded-full mx-3 overflow-hidden">
+                <div class="h-full rounded-full" style="width: ${widthPct}%; background-color: ${barColor};"></div>
+              </div>
+              <div class="w-8 text-right font-bold" style="color: ${scoreColor}">${w.score.toFixed(2)}</div>
+            </div>`;
+
+          // Table Logic
+          let statusText = "Poor";
+          let statusBg = "#ffebee";
+          let statusColor = "#d32f2f";
+          if (w.score >= 8.5) {
+            statusText = "Excellent";
+            statusBg = "#e8f5e9";
+            statusColor = "#2e7d32";
+          } else if (w.score >= 7.0) {
+            statusText = "Good";
+            statusBg = "#e8f5e9";
+            statusColor = "#4caf50";
+          } else if (w.score >= 5.0) {
+            statusText = "Average";
+            statusBg = "#fff3e0";
+            statusColor = "#ed6c02";
+          }
+          
+          let rowClass = idx % 2 === 1 ? "bg-gray-50/50" : "";
+          
+          tableHtml += `
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors ${rowClass}">
+              <td class="px-4 py-2 font-medium">${w.name}</td>
+              <td class="px-4 py-2 text-gray-500 text-[11px]">NAGPUR STATION</td>
+              <td class="px-4 py-2 font-bold text-center" style="color: ${scoreColor}">${w.score.toFixed(2)}</td>
+              <td class="px-4 py-2 text-center">
+                <span class="px-3 py-1 rounded-full text-[10px] font-bold" style="background-color: ${statusBg}; color: ${statusColor};">${statusText}</span>
+              </td>
+            </tr>`;
+        });
+
+        chartContainer.innerHTML = chartHtml;
+        tableBody.innerHTML = tableHtml;
+      })();
+    </script>
+    </section>
+
+    <section class="bg-white p-8 sm:p-12 rounded-xl shadow-md border border-slate-200 card-shadow page-break"
+      id="system">
+      <h2
+        class="font-tech text-2xl font-bold uppercase text-railway-900 tracking-wider mb-6 flex items-center gap-3 pb-2 border-b-2 border-railway-600">
+        <span class="w-2 h-6 bg-railway-600 rounded-full"></span> 2. Digital
+        Monitoring System & AI Methodology
+      </h2>
+
+      <p class="text-slate-700 leading-relaxed text-justify mb-6">
+        The objective of Safai AI is to transform washroom management from a
+        reactive, manually monitored process into a proactive, AI-driven
+        digital monitoring system. SAAFAI replaces the legacy paper register
+        process with a completely digital workflow where every cleaning
+        activity is recorded, verified, analyzed, and converted into
+        actionable insights.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <h3 class="font-semibold text-slate-800 text-lg mb-4">
+            The Digital Workflow
+          </h3>
+          <div class="flex flex-col items-center space-y-2 font-medium text-[13px]">
+            <div class="w-full py-2 text-center border border-railway-600 rounded bg-white shadow-sm text-railway-700">
+              1. Cleaner Login & Selection
+            </div>
+            <i class="fa-solid fa-arrow-down text-railway-400"></i>
+            <div class="w-full py-2 text-center border border-amber-500 rounded bg-amber-50 shadow-sm text-amber-700">
+              <i class="fa-solid fa-camera mr-1"></i> 2. Upload Before Images
+            </div>
+            <i class="fa-solid fa-arrow-down text-railway-400"></i>
+            <div class="w-full py-2 text-center border border-railway-600 rounded bg-white shadow-sm text-railway-700">
+              3. Execute Cleaning Checklist
+            </div>
+            <i class="fa-solid fa-arrow-down text-railway-400"></i>
+            <div
+              class="w-full py-2 text-center border border-emerald-500 rounded bg-emerald-50 shadow-sm text-emerald-700">
+              <i class="fa-solid fa-camera mr-1"></i> 4. Upload After Images
+            </div>
+            <i class="fa-solid fa-arrow-down text-railway-400"></i>
+            <div class="w-full py-2 text-center bg-railway-600 rounded text-white font-bold shadow-md">
+              <i class="fa-solid fa-microchip mr-1"></i> 5. AI Image Analysis
+              Triggered
+            </div>
+            <i class="fa-solid fa-arrow-down text-railway-400"></i>
+            <div class="w-full py-2 text-center bg-slate-800 rounded text-white font-bold shadow-md">
+              <i class="fa-solid fa-chart-line mr-1"></i> 6. Dashboard
+              Analytics Updated
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-slate-800 text-lg mb-4">
+            5-Tier AI Ensemble
+          </h3>
+          <p class="text-sm text-slate-600 mb-4">
+            Rather than relying on one image, SAAFAI combines outputs from
+            several specialized models:
+          </p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-100">
+              <i class="fa-solid fa-sparkles text-sky-500 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-800">Visual Cleanliness (96% Acc):</strong>
+                Detects floor stains, water marks, and dirty surfaces.
+                (Weight: 30%)
+              </div>
+            </li>
+            <li class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-100">
+              <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-800">Safety Detection (95% Acc):</strong>
+                Identifies wet floors, puddles, and slip hazards. (Weight:
+                15%)
+              </div>
+            </li>
+            <li class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-100">
+              <i class="fa-solid fa-trash-can text-slate-500 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-800">Garbage Detection (97% Acc):</strong>
+                Flags overflowing bins and waste accumulation.
+              </div>
+            </li>
+            <li class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-100">
+              <i class="fa-solid fa-wrench text-red-500 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-800">Broken Fixtures (94% Acc):</strong>
+                Analyzes structural damage to doors, mirrors, and taps.
+              </div>
+            </li>
+            <li class="flex items-start gap-3 p-2 bg-slate-50 rounded border border-slate-100">
+              <i class="fa-solid fa-pump-soap text-teal-500 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-800">Consumables (98% Acc):</strong>
+                Validates availability of soap and tissue paper. (Weight: 15%)
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white p-8 sm:p-12 rounded-xl shadow-md border border-slate-200 card-shadow page-break"
+      id="infrastructure">
+      <h2
+        class="font-tech text-2xl font-bold uppercase text-railway-900 tracking-wider mb-6 flex items-center gap-3 pb-2 border-b-2 border-railway-600">
+        <span class="w-2 h-6 bg-railway-600 rounded-full"></span>
+        3. Physical Infrastructure Condition Assessment
+      </h2>
+
+      <div class="space-y-4 text-slate-700 leading-relaxed text-justify">
+        <p>
+          In addition to evaluating cleanliness standards and operational
+          sanitation practices, a comprehensive assessment of the physical
+          washroom infrastructure was undertaken as part of the baseline
+          survey. The objective of this exercise was to identify structural,
+          plumbing, and asset-related deficiencies that may adversely impact
+          passenger experience, safety, accessibility, and overall facility
+          functionality.
+        </p>
+        <p>
+          The assessment focused on the condition of floor and wall finishes,
+          sanitary fixtures, plumbing systems, drainage arrangements,
+          partitions, utility fittings, and other passenger-facing assets.
+          While such observations are independent of routine cleaning
+          performance, they play a critical role in determining the perceived
+          quality and usability of public sanitation facilities.
+        </p>
+
+        <div class="border-l-4 border-amber-500 pl-4 bg-amber-50/60 py-3 rounded-r-lg font-medium text-slate-800">
+          The infrastructure review identified multiple maintenance-related
+          concerns requiring targeted civil, plumbing, and repair
+          interventions. Addressing these issues alongside ongoing sanitation
+          initiatives will significantly enhance facility reliability,
+          passenger satisfaction, and long-term asset sustainability.
+        </div>
+      </div>
+
+      <div class="p-6 bg-slate-900 rounded-xl text-white my-8">
+        <div class="flex items-center justify-between border-b border-slate-700 pb-3 mb-4">
+          <span class="font-tech font-bold text-lg tracking-wider text-amber-400 uppercase">
+            <i class="fa-solid fa-screwdriver-wrench mr-1"></i>
+            Figure Series 2: Physical Infrastructure Audit Findings
+          </span>
+          <span
+            class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+            Maintenance Assessment
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <div class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 shadow-sm flex flex-col">
+            <img src="https://plain-apac-prod-public.komododecks.com/202607/14/rLwk6AcB9EkvhHZzsaqd/image.webp"
+              alt="Corroded Urinal Fixture" class="w-full h-48 object-contain bg-slate-900/50 p-1" />
+            <div class="px-4 py-3 border-t border-slate-700 flex-1">
+              <h4 class="font-tech text-xs uppercase tracking-widest text-center text-amber-400 mb-1">
+                Observation 01
+              </h4>
+              <p class="text-sm text-center text-slate-200 font-medium">
+                Corroded Urinal Fixture & Surface Deterioration
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 shadow-sm flex flex-col">
+            <img src="https://plain-apac-prod-public.komododecks.com/202607/14/BXiYKSqBFBMEiAuo7M2i/image.webp"
+              alt="Floor Tile Damage" class="w-full h-48 object-contain bg-slate-900/50 p-1" />
+            <div class="px-4 py-3 border-t border-slate-700 flex-1">
+              <h4 class="font-tech text-xs uppercase tracking-widest text-center text-amber-400 mb-1">
+                Observation 02
+              </h4>
+              <p class="text-sm text-center text-slate-200 font-medium">
+                Floor Tile Damage & Incomplete Civil Finishing
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 shadow-sm flex flex-col">
+            <img src="https://plain-apac-prod-public.komododecks.com/202607/14/VlUjN16ON2ealvclh14T/image.webp"
+              alt="Damaged Urinal Fixture" class="w-full h-48 object-contain bg-slate-900/50 p-1" />
+            <div class="px-4 py-3 border-t border-slate-700 flex-1">
+              <h4 class="font-tech text-xs uppercase tracking-widest text-center text-amber-400 mb-1">
+                Observation 03
+              </h4>
+              <p class="text-sm text-center text-slate-200 font-medium">
+                Damaged Urinal Fixture & Poor Sanitary Condition
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 shadow-sm flex flex-col">
+            <img src="https://plain-apac-prod-public.komododecks.com/202607/14/LGlogXfwjBhhZoN12Dg6/image.webp"
+              alt="Rust Deposits & Outdated Hardware" class="w-full h-48 object-contain bg-slate-900/50 p-1" />
+            <div class="px-4 py-3 border-t border-slate-700 flex-1">
+              <h4 class="font-tech text-xs uppercase tracking-widest text-center text-amber-400 mb-1">
+                Observation 04
+              </h4>
+              <p class="text-sm text-center text-slate-200 font-medium">
+                Rust Deposits & Outdated Hardware
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 shadow-sm flex flex-col">
+            <img src="https://plain-apac-prod-public.komododecks.com/202607/14/VbBm2fSAVPnqqUBfrM8x/image.webp"
+              alt="Damaged Urinal Fixture with Floor Staining" class="w-full h-48 object-contain bg-slate-900/50 p-1" />
+            <div class="px-4 py-3 border-t border-slate-700 flex-1">
+              <h4 class="font-tech text-xs uppercase tracking-widest text-center text-amber-400 mb-1">
+                Observation 05
+              </h4>
+              <p class="text-sm text-center text-slate-200 font-medium">
+                Damaged Urinal Fixture with Floor Staining
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 shadow-sm flex flex-col">
+            <img src="https://plain-apac-prod-public.komododecks.com/202607/14/zzN1ZAtv5wusUktRWJTy/image.webp"
+              alt="Corroded Urinal Flush Connection" class="w-full h-48 object-contain bg-slate-900/50 p-1" />
+            <div class="px-4 py-3 border-t border-slate-700 flex-1">
+              <h4 class="font-tech text-xs uppercase tracking-widest text-center text-amber-400 mb-1">
+                Observation 06
+              </h4>
+              <p class="text-sm text-center text-slate-200 font-medium">
+                Corroded Urinal Flush Connection
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-5 p-5 rounded-lg bg-slate-800 border border-slate-700">
+          <h4 class="font-tech text-base font-bold tracking-wide uppercase text-amber-400 mb-3">
+            Consolidated Assessment Summary
+          </h4>
+          <p class="text-sm text-slate-300 leading-relaxed text-justify">
+            The physical infrastructure audit revealed instances of asset deterioration, plumbing-related deficiencies,
+            surface damage, and general wear-and-tear across selected washroom facilities. Although these observations
+            are not directly linked to cleaning performance, they significantly influence passenger perception,
+            accessibility, safety, and the overall quality of sanitation services. The photographic evidence serves as a
+            baseline reference for future maintenance planning and infrastructure upgrades.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white p-8 sm:p-12 rounded-xl shadow-md border border-slate-200 card-shadow page-break" id="kpi">
+      <h2
+        class="font-tech text-2xl font-bold uppercase text-railway-900 tracking-wider mb-1 flex items-center gap-3 pb-2 border-b-2 border-railway-600">
+        <span class="w-2 h-6 bg-railway-600 rounded-full"></span> 4. Overall Performance
+      </h2>
+      <div class="text-slate-500 mb-6 text-sm font-medium">Organizational Performance Summary — Nagpur Railway Station
+      </div>
+
+      <!-- Telemetry KPI Cards -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 font-tech">
+        <div class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl text-white shadow">
+          <span class="text-xs font-sans font-medium text-railway-300 block uppercase tracking-wider">Total
+            Washrooms</span>
+          <span class="text-3xl font-bold mt-1 block">13</span>
+          <span class="text-[10px] font-sans text-emerald-400 block mt-1"><i class="fa-solid fa-server mr-1"></i> 100%
+            Station Layout</span>
+        </div>
+        <div class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl text-white shadow">
+          <span class="text-xs font-sans font-medium text-railway-300 block uppercase tracking-wider">Total AI
+            Audits</span>
+          <span class="text-3xl font-bold mt-1 block text-sky-300">250</span>
+          <span class="text-[10px] font-sans text-slate-400 block mt-1"><i class="fa-solid fa-robot mr-1"></i> Automated
+            Runs</span>
+        </div>
+        <div class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl text-white shadow">
+          <span class="text-xs font-sans font-medium text-railway-300 block uppercase tracking-wider">Completed
+            Tasks</span>
+          <span class="text-3xl font-bold mt-1 block text-emerald-400">233</span>
+          <span class="text-[10px] font-sans text-slate-400 block mt-1"><i class="fa-solid fa-circle-check mr-1"></i>
+            Verified Tasks</span>
+        </div>
+        <div class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl text-white shadow">
+          <span class="text-xs font-sans font-medium text-railway-300 block uppercase tracking-wider">Ongoing
+            Tasks</span>
+          <span class="text-3xl font-bold mt-1 block text-amber-400">17</span>
+          <span class="text-[10px] font-sans text-slate-400 block mt-1"><i class="fa-solid fa-spinner mr-1"></i>
+            Awaiting Supervisor</span>
+        </div>
+        <div class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl text-white shadow">
+          <span class="text-xs font-sans font-medium text-railway-300 block uppercase tracking-wider">Overall
+            Score</span>
+          <span class="text-3xl font-bold mt-1 block text-sky-400">7.61 <span
+              class="text-xs font-sans font-normal text-slate-400">/10</span></span>
+          <span class="text-[10px] font-sans text-emerald-400 block mt-1"><i class="fa-solid fa-caret-up mr-1"></i>
+            Steady Growth</span>
+        </div>
+        <div class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl text-white shadow">
+          <span class="text-xs font-sans font-medium text-railway-300 block uppercase tracking-wider">Model
+            Accuracy</span>
+          <span class="text-3xl font-bold mt-1 block text-indigo-300">92.4%</span>
+          <span class="text-[10px] font-sans text-slate-400 block mt-1"><i class="fa-solid fa-bullseye mr-1"></i> High
+            Confidence</span>
+        </div>
+        <div class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl text-white shadow">
+          <span class="text-xs font-sans font-medium text-railway-300 block uppercase tracking-wider">Images
+            Uploaded</span>
+          <span class="text-3xl font-bold mt-1 block">6295</span>
+          <span class="text-[10px] font-sans text-slate-400 block mt-1"><i class="fa-solid fa-database mr-1"></i> (3274
+            Before | 3021 After)</span>
+        </div>
+        <div class="p-4 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl text-white shadow">
+          <span class="text-xs font-sans font-medium text-railway-300 block uppercase tracking-wider">Total Staff</span>
+          <span class="text-3xl font-bold mt-1 block text-teal-300">03</span>
+          <span class="text-[10px] font-sans text-slate-400 block mt-1"><i class="fa-solid fa-users mr-1"></i> Assigned
+            Personnel</span>
+        </div>
+      </div>
+
+      <!-- Analytics Divider -->
+      <div class="flex items-center gap-3 my-8">
+        <div class="flex-1 h-px bg-slate-200"></div>
+        <span class="text-xs font-bold uppercase tracking-widest text-slate-400 whitespace-nowrap">Performance
+          Analytics</span>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+
+      <!-- Two Charts Row -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+
+        <!-- Chart 1: Ranked Bar Chart -->
+        <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+          <div class="flex items-center justify-between mb-1">
+            <h3 class="text-sm font-bold text-[#0b1f5c] uppercase tracking-wide">
+              <i class="fa-solid fa-chart-bar text-[#2962ff] mr-1"></i> Washroom Rankings
+            </h3>
+            <span class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">60-Day Avg. AI Score</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-4">All washrooms ranked by overall AI hygiene score</p>
+          <div style="position:relative; height:260px;">
+            <canvas id="overallBarChart"></canvas>
+          </div>
+        </div>
+        
+        <!-- Chart 2: 15-Day Trend Line Chart -->
+        <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+          <div class="flex items-center justify-between mb-1">
+            <h3 class="text-sm font-bold text-[#0b1f5c] uppercase tracking-wide">
+              <i class="fa-solid fa-chart-line text-[#2962ff] mr-1"></i> 15-Day Period Trend
+            </h3>
+            <span class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Avg Score / Period</span>
+          </div>
+          <p class="text-xs text-gray-400 mb-4">Performance trajectory across four 15-day reporting periods</p>
+          <div style="position:relative; height:260px;">
+            <canvas id="trendLineChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Summary Insight Strips -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 border border-emerald-100">
+          <div class="w-9 h-9 rounded-lg bg-emerald-500 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-trophy text-white text-sm"></i>
+          </div>
+          <div>
+            <div class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest">Best Washroom</div>
+            <div class="text-sm font-bold text-slate-800">Office GF Washroom 2</div>
+            <div class="text-xs text-emerald-600 font-semibold">8.78 avg — Consistently High ↑</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-red-50 border border-red-100">
+          <div class="w-9 h-9 rounded-lg bg-red-500 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-triangle-exclamation text-white text-sm"></i>
+          </div>
+          <div>
+            <div class="text-[10px] font-bold text-red-600 uppercase tracking-widest">Worst Washroom</div>
+            <div class="text-sm font-bold text-slate-800">Handi Cap Platform-1</div>
+            <div class="text-xs text-red-600 font-semibold">6.23 avg — Needs Attention ↓</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-sky-50 border border-sky-100">
+          <div class="w-9 h-9 rounded-lg bg-sky-500 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-arrow-trend-up text-white text-sm"></i>
+          </div>
+          <div>
+            <div class="text-[10px] font-bold text-sky-600 uppercase tracking-widest">Most Improved</div>
+            <div class="text-sm font-bold text-slate-800">Office Floor-3 W1</div>
+            <div class="text-xs text-sky-600 font-semibold">+1.03 pts gain (Day 1→60) ↑</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          // Chart 1 — Horizontal Bar (Ranked Washrooms by 60-day avg)
+          const barCtx = document.getElementById('overallBarChart').getContext('2d');
+          const washrooms = [
+            { name: 'Office Ground Floor Washroom 2', avg: 8.78 },
+            { name: 'Office Floor-1 - Washroom 1', avg: 8.71 },
+            { name: 'Office Floor-1 Washroom 2', avg: 8.62 },
+            { name: 'Office Floor-3 Washroom 2', avg: 8.60 },
+            { name: 'Office Floor-2 Washroom 1', avg: 8.60 },
+            { name: 'Office Floor-2 Washroom 2', avg: 8.48 },
+            { name: 'Office Ground Floor Washroom 1', avg: 8.43 },
+            { name: 'Sleeper class waiting room', avg: 8.31 },
+            { name: 'Office Floor-3 Washroom 1', avg: 8.28 },
+            { name: 'Platform 1 near office', avg: 6.66 },
+            { name: 'Bombay Side Pf-1 End Washroom', avg: 6.31 },
+            { name: 'Handi Cap Platform-1', avg: 6.23 },
+          ];
+          const barColors = washrooms.map(w =>
+            w.avg >= 8.5 ? '#2e7d32' :
+              w.avg >= 7.0 ? '#2962ff' :
+                w.avg >= 5.0 ? '#ed6c02' : '#d32f2f'
+          );
+          new Chart(barCtx, {
+            type: 'bar',
+            data: {
+              labels: washrooms.map(w => w.name),
+              datasets: [{
+                label: 'AI Hygiene Score (/10)',
+                data: washrooms.map(w => w.avg),
+                backgroundColor: barColors,
+                borderRadius: 6,
+                borderSkipped: false,
+              }]
+            },
+            options: {
+              indexAxis: 'y',
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: { display: false },
+                datalabels: {
+                  anchor: 'end', align: 'right',
+                  font: { weight: 'bold', size: 11 },
+                  color: '#374151',
+                  formatter: v => v.toFixed(2)
+                }
+              },
+              scales: {
+                x: {
+                  min: 0, max: 10,
+                  grid: { color: '#f1f5f9' },
+                  ticks: { font: { size: 10 }, color: '#94a3b8' }
+                },
+                y: {
+                  grid: { display: false },
+                  ticks: { font: { size: 11 }, color: '#374151' }
+                }
+              }
+            },
+            plugins: [ChartDataLabels]
+          });
+
+          // Chart 2 — Multi-line 15-day trend
+          const lineCtx = document.getElementById('trendLineChart').getContext('2d');
+          const periods = ['Day 1–15', 'Day 16–30', 'Day 31–45', 'Day 46–60'];
+          const trendData = [
+            { name: 'Bombay Side Pf-1', data: [6.34, 6.71, 5.96, 4.15], color: '#f59e0b' },
+            { name: 'Handi Cap Pf-1', data: [5.87, 7.23, 5.40, null], color: '#d32f2f' },
+            { name: 'Office Flr-1 W1', data: [8.73, 8.70, null, null], color: '#2e7d32' },
+            { name: 'Office Flr-1 W2', data: [8.60, 8.63, null, null], color: '#4caf50' },
+            { name: 'Office Flr-2 W1', data: [8.53, 8.65, null, null], color: '#2962ff' },
+            { name: 'Office Flr-2 W2', data: [8.57, 8.44, null, null], color: '#0288d1' },
+            { name: 'Office Flr-3 W1', data: [7.53, 8.56, null, null], color: '#7b1fa2' },
+            { name: 'Office Flr-3 W2', data: [8.20, 8.68, null, null], color: '#9c27b0' },
+            { name: 'Office GF W1', data: [8.23, 8.64, null, null], color: '#00897b' },
+            { name: 'Office GF W2', data: [8.85, 8.74, null, null], color: '#00695c' },
+            { name: 'Pf 1 near office', data: [7.23, 6.90, 5.12, 6.80], color: '#ed6c02' },
+            { name: 'Sleeper class waiting', data: [8.53, 8.68, 8.23, 7.34], color: '#c2185b' }
+          ];
+          new Chart(lineCtx, {
+            type: 'line',
+            data: {
+              labels: periods,
+              datasets: trendData.map(d => ({
+                label: d.name,
+                data: d.data,
+                borderColor: d.color,
+                backgroundColor: d.color + '18',
+                pointBackgroundColor: d.color,
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                borderWidth: 2,
+                tension: 0.3,
+                spanGaps: false,
+              }))
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  position: 'bottom',
+                  labels: { font: { size: 10 }, boxWidth: 12, padding: 8 }
+                },
+                datalabels: { display: false }
+              },
+              scales: {
+                y: {
+                  min: 3, max: 10,
+                  grid: { color: '#f1f5f9' },
+                  ticks: { font: { size: 10 }, color: '#94a3b8' }
+                },
+                x: {
+                  grid: { color: '#f1f5f9' },
+                  ticks: { font: { size: 10 }, color: '#374151' }
+                }
+              }
+            },
+            plugins: [ChartDataLabels]
+          });
+        })();
+      </script>
+
+
+      <!-- Performance Insight Banner -->
+      <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md mb-10"
+        style="background: linear-gradient(135deg, #0b1f5c 0%, #1a3080 60%, #0b1f5c 100%);">
+        <div class="grid grid-cols-3 divide-x divide-white/10">
+
+          <!-- Best Washroom -->
+          <div class="p-5 flex flex-col gap-2">
+            <div class="flex items-center gap-2 mb-1">
+              <div
+                class="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center">
+                <i class="fa-solid fa-trophy text-emerald-400 text-xs"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-400">Best Washroom</span>
+            </div>
+            <div class="text-white font-bold text-base leading-snug">Office Ground Flr Washroom 2</div>
+            <div class="flex items-end gap-2">
+              <span class="text-3xl font-extrabold text-emerald-400 leading-none">8.78</span>
+              <span class="text-slate-400 text-xs mb-1">/10 avg</span>
+            </div>
+            <div class="text-[11px] text-slate-400 leading-relaxed">15-day scores: <span
+                class="text-white font-semibold">8.85 → 8.74</span></div>
+            <div class="mt-1 flex items-center gap-1.5">
+              <div class="flex-1 h-1 rounded-full bg-white/10">
+                <div class="h-full rounded-full bg-emerald-400" style="width:87.8%"></div>
+              </div>
+              <span class="text-[10px] text-emerald-400 font-bold">87.8%</span>
+            </div>
+          </div>
+
+          <!-- Worst Washroom -->
+          <div class="p-5 flex flex-col gap-2">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-7 h-7 rounded-lg bg-red-500/20 border border-red-400/30 flex items-center justify-center">
+                <i class="fa-solid fa-triangle-exclamation text-red-400 text-xs"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-red-400">Worst Washroom</span>
+            </div>
+            <div class="text-white font-bold text-base leading-snug">Handi Cap Platform-1</div>
+            <div class="flex items-end gap-2">
+              <span class="text-3xl font-extrabold text-red-400 leading-none">6.23</span>
+              <span class="text-slate-400 text-xs mb-1">/10 avg</span>
+            </div>
+            <div class="text-[11px] text-slate-400 leading-relaxed">15-day scores: <span
+                class="text-white font-semibold">5.87 → 7.23 → 5.40</span></div>
+            <div class="mt-1 flex items-center gap-1.5">
+              <div class="flex-1 h-1 rounded-full bg-white/10">
+                <div class="h-full rounded-full bg-red-400" style="width:62.3%"></div>
+              </div>
+              <span class="text-[10px] text-red-400 font-bold">62.3%</span>
+            </div>
+          </div>
+
+          <!-- Most Improved -->
+          <div class="p-5 flex flex-col gap-2">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="w-7 h-7 rounded-lg bg-sky-500/20 border border-sky-400/30 flex items-center justify-center">
+                <i class="fa-solid fa-arrow-trend-up text-sky-400 text-xs"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400">Most Improved</span>
+            </div>
+            <div class="text-white font-bold text-base leading-snug">Office Floor-3 Washroom 1</div>
+            <div class="flex items-end gap-2">
+              <span class="text-3xl font-extrabold text-sky-400 leading-none">+1.03</span>
+              <span class="text-slate-400 text-xs mb-1">pts gained</span>
+            </div>
+            <div class="text-[11px] text-slate-400 leading-relaxed">15-day scores: <span
+                class="text-white font-semibold">7.53 → 8.56</span></div>
+            <div class="mt-1 flex items-center gap-1.5">
+              <div class="flex-1 h-1 rounded-full bg-white/10">
+                <div class="h-full rounded-full bg-sky-400" style="width:82.8%"></div>
+              </div>
+              <span class="text-[10px] text-sky-400 font-bold">82.8%</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Best Performing Cleaners -->
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-tech text-base font-bold uppercase tracking-wider text-[#0b1f5c] flex items-center gap-2">
+          <span class="w-1.5 h-5 bg-[#2962ff] rounded-full inline-block"></span>
+          Best Performing Cleaners
+        </h3>
+        <span
+          class="text-[10px] font-bold uppercase tracking-widest text-slate-400 border border-slate-200 px-3 py-1 rounded-full">60-Day
+          Period</span>
+      </div>
+      <div class="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead>
+            <tr style="background: linear-gradient(90deg, #0b1f5c, #1e3a8a);" class="text-white">
+              <th class="px-5 py-3.5 font-semibold text-xs uppercase tracking-widest text-center w-14">Rank</th>
+              <th class="px-5 py-3.5 font-semibold text-xs uppercase tracking-widest">Cleaner</th>
+              <th class="px-5 py-3.5 font-semibold text-xs uppercase tracking-widest text-center">Tasks</th>
+              <th class="px-5 py-3.5 font-semibold text-xs uppercase tracking-widest text-center">Score</th>
+              <th class="px-5 py-3.5 font-semibold text-xs uppercase tracking-widest text-center">Performance</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 bg-white">
+            <!-- Rank 1 -->
+            <tr class="hover:bg-slate-50/70 transition-colors">
+              <td class="px-5 py-4 text-center">
+                <div
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full text-white text-xs font-extrabold shadow-md"
+                  style="background: linear-gradient(135deg, #f59e0b, #d97706);">1</div>
+              </td>
+              <td class="px-5 py-4">
+                <div class="font-bold text-slate-800 text-sm">Priyanka Tiwari</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">Senior Staff</div>
+              </td>
+              <td class="px-5 py-4 text-center">
+                <span class="text-slate-800 font-bold text-sm">85</span>
+              </td>
+              <td class="px-5 py-4 text-center">
+                <span class="text-emerald-600 font-extrabold text-base">8.55</span>
+                <div class="text-[10px] text-slate-400">/10</div>
+              </td>
+              <td class="px-5 py-4">
+                <div class="flex items-center gap-2">
+                  <div class="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full rounded-full bg-emerald-500" style="width:85.5%"></div>
+                  </div>
+                  <span class="text-[11px] font-bold text-emerald-600 shrink-0">Excellent</span>
+                </div>
+              </td>
+            </tr>
+            <!-- Rank 2 -->
+            <tr class="hover:bg-slate-50/70 transition-colors bg-slate-50/30">
+              <td class="px-5 py-4 text-center">
+                <div
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full text-slate-600 text-xs font-extrabold shadow-sm"
+                  style="background: linear-gradient(135deg, #e2e8f0, #cbd5e1);">2</div>
+              </td>
+              <td class="px-5 py-4">
+                <div class="font-bold text-slate-800 text-sm">Joti Madavi</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">Senior Staff</div>
+              </td>
+              <td class="px-5 py-4 text-center">
+                <span class="text-slate-800 font-bold text-sm">60</span>
+              </td>
+              <td class="px-5 py-4 text-center">
+                <span class="text-emerald-600 font-extrabold text-base">8.34</span>
+                <div class="text-[10px] text-slate-400">/10</div>
+              </td>
+              <td class="px-5 py-4">
+                <div class="flex items-center gap-2">
+                  <div class="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full rounded-full bg-emerald-500" style="width:83.4%"></div>
+                  </div>
+                  <span class="text-[11px] font-bold text-emerald-600 shrink-0">Excellent</span>
+                </div>
+              </td>
+            </tr>
+            <!-- Rank 3 -->
+            <tr class="hover:bg-slate-50/70 transition-colors">
+              <td class="px-5 py-4 text-center">
+                <div
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full text-white text-xs font-extrabold shadow-sm"
+                  style="background: linear-gradient(135deg, #b45309, #92400e);">3</div>
+              </td>
+              <td class="px-5 py-4">
+                <div class="font-bold text-slate-800 text-sm">Mangla Kavde</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">Regular Staff</div>
+              </td>
+              <td class="px-5 py-4 text-center">
+                <span class="text-slate-800 font-bold text-sm">65</span>
+              </td>
+              <td class="px-5 py-4 text-center">
+                <span class="text-amber-500 font-extrabold text-base">6.31</span>
+                <div class="text-[10px] text-slate-400">/10</div>
+              </td>
+              <td class="px-5 py-4">
+                <div class="flex items-center gap-2">
+                  <div class="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full rounded-full bg-amber-500" style="width:63.1%"></div>
+                  </div>
+                  <span class="text-[11px] font-bold text-amber-600 shrink-0">Average</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="bg-white p-8 sm:p-12 rounded-xl shadow-md border border-slate-200 card-shadow page-break"
+      id="trends">
+      <h2
+        class="font-tech text-2xl font-bold uppercase text-railway-900 tracking-wider mb-6 flex items-center gap-3 pb-2 border-b-2 border-railway-600">
+        <span class="w-2 h-6 bg-railway-600 rounded-full"></span> 5. Advanced Analytics &amp; Trend Heatmap
+      </h2>
+
+      <p class="text-justify text-slate-700 leading-relaxed mb-6">
+        The Hygiene Performance Heatmap below maps the weekly AI compliance scores for each monitored washroom
+        across a 7-week reporting cycle. Color intensity reflects score bands — from high-performing
+        <span class="font-semibold text-emerald-700">green</span> zones to deteriorating
+        <span class="font-semibold text-red-600">red</span> zones — instantly highlighting operational risk
+        windows and sustained quality hubs.
+      </p>
+
+      <!-- Heatmap Table -->
+      <div class="mb-6 overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+        <table class="w-full border-collapse text-xs font-medium" id="heatmap-table">
+          <thead>
+            <tr class="bg-slate-800 text-white">
+              <th class="px-3 py-3 text-left font-semibold text-[11px] uppercase tracking-wide min-w-[180px]">Washroom
+              </th>
+              <th class="px-2 py-3 text-center font-semibold text-[11px]">Wk 1</th>
+              <th class="px-2 py-3 text-center font-semibold text-[11px]">Wk 2</th>
+              <th class="px-2 py-3 text-center font-semibold text-[11px]">Wk 3</th>
+              <th class="px-2 py-3 text-center font-semibold text-[11px]">Wk 4</th>
+              <th class="px-2 py-3 text-center font-semibold text-[11px]">Wk 5</th>
+              <th class="px-2 py-3 text-center font-semibold text-[11px]">Wk 6</th>
+              <th class="px-2 py-3 text-center font-semibold text-[11px]">Wk 7</th>
+              <th class="px-2 py-3 text-center font-semibold text-[11px]">Avg</th>
+            </tr>
+          </thead>
+          <tbody id="heatmap-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Legend -->
+      <div class="flex flex-wrap items-center gap-4 mb-8 text-xs font-semibold">
+        <span class="text-slate-500 uppercase tracking-wider mr-1">Score Scale:</span>
+        <span class="flex items-center gap-1.5"><span class="w-5 h-4 rounded" style="background:#b7e1cd"></span> 8.5–10
+          Excellent</span>
+        <span class="flex items-center gap-1.5"><span class="w-5 h-4 rounded" style="background:#d9ead3"></span> 7.0–8.4
+          Good</span>
+        <span class="flex items-center gap-1.5"><span class="w-5 h-4 rounded" style="background:#fce8b2"></span> 5.0–6.9
+          Average</span>
+        <span class="flex items-center gap-1.5"><span class="w-5 h-4 rounded" style="background:#f4cccc"></span> 0–4.9
+          Poor</span>
+        <span class="flex items-center gap-1.5"><span class="w-5 h-4 rounded" style="background:#efefef"></span>
+          N/A</span>
+      </div>
+
+      <h3 class="font-semibold text-slate-800 text-lg mb-3">
+        Deep Data Insights
+      </h3>
+      <ul class="list-disc pl-5 space-y-3 text-sm text-slate-700 text-justify">
+        <li>
+          <strong>Critical Collapse — Bombay Side Platform-1 End Washroom:</strong>
+          This washroom maintained reasonable average scores (6.32–6.72) through Weeks 1–6 but
+          suffered a severe quality collapse in Week 7. It plummeted to <span class="font-bold text-red-700">4.25 (Wk 7)</span>, entering the
+          <span class="font-bold">Poor</span> zone and requiring immediate corrective action.
+        </li>
+        <li>
+          <strong>Consistent Excellence — Office Floor Washrooms:</strong>
+          The Office Ground Floor Washroom 2 and Office Floor-1 Washroom 1 were the strongest performers across the available reporting weeks. 
+          Office Ground Floor 2 maintained scores between 8.60–8.83 (all <span class="font-bold text-emerald-700">Excellent</span>). 
+          Controlled access and disciplined cleaner routines are the key differentiating factors.
+        </li>
+        <li>
+          <strong>Volatile Performance — Handi Cap Platform-1:</strong>
+          This washroom started at 5.53 (Wk 1), rapidly improved to <span class="font-bold text-green-700">7.40 in Week 3</span>,
+          and then tapered down to 5.40 in Week 6, reflecting inconsistent daily standards and lack of sustained accountability.
+        </li>
+        <li>
+          <strong>Massive Monitoring Gaps:</strong>
+          A huge operational blindspot exists for multiple facilities. <code>manish nagar1</code> has 0% data coverage across all 7 weeks.
+          Additionally, virtually all Office Floor washrooms stopped reporting data after Week 4 or Week 5.
+        </li>
+      </ul>
+
+      <script>
+        (function () {
+          const heatData = [
+            { name: "Bombay Side Platform-1 End Washroom", weeks: [6.32, 6.34, 6.72, 6.62, 6.36, 6.50, 4.25] },
+            { name: "Handi Cap Platform-1", weeks: [5.53, 5.97, 7.40, 6.90, null, 5.40, null] },
+            { name: "manish nagar1", weeks: [null, null, null, null, null, null, null] },
+            { name: "Office Floor-1 - Washroom 1", weeks: [null, 8.65, 8.73, 8.73, null, null, null] },
+            { name: "Office Floor-1 Washroom 2", weeks: [null, 8.55, 8.68, 8.60, null, null, null] },
+            { name: "Office Floor-2 Washroom 1", weeks: [null, 8.53, 8.40, 8.90, null, null, null] },
+            { name: "Office Floor-2 Washroom 2", weeks: [null, 8.57, 8.15, 8.56, null, null, null] },
+            { name: "Office Floor-3 Washroom 1", weeks: [7.20, 7.70, 8.60, 8.56, null, null, null] },
+            { name: "Office Floor-3 Washroom 2", weeks: [8.20, null, 8.70, 8.68, null, null, null] },
+            { name: "Office Ground Floor Washroom 1", weeks: [7.54, 8.57, 8.75, 8.60, null, null, null] },
+            { name: "Office Ground Floor Washroom 2", weeks: [null, 8.83, 8.78, 8.78, 8.60, null, null] }
+          ];
+
+          function getColor(val) {
+            if (val === null) return { bg: "#efefef", text: "#9ca3af", label: "N/A" };
+            if (val >= 8.5) return { bg: "#b7e1cd", text: "#0a4a2a", label: val.toFixed(2) };
+            if (val >= 7.0) return { bg: "#d9ead3", text: "#274e13", label: val.toFixed(2) };
+            if (val >= 5.0) return { bg: "#fce8b2", text: "#7f5000", label: val.toFixed(2) };
+            return { bg: "#f4cccc", text: "#7f0000", label: val.toFixed(2) };
+          }
+
+          const tbody = document.getElementById("heatmap-body");
+          heatData.forEach((row, i) => {
+            const validVals = row.weeks.filter(v => v !== null);
+            const avg = validVals.length ? (validVals.reduce((a, b) => a + b, 0) / validVals.length) : null;
+            const avgColor = getColor(avg);
+
+            const tr = document.createElement("tr");
+            tr.style.borderBottom = "1px solid #e2e8f0";
+            tr.style.background = i % 2 === 0 ? "#ffffff" : "#f8fafc";
+
+            // Name cell
+            const nameTd = document.createElement("td");
+            nameTd.style.cssText = "padding:10px 12px; font-weight:600; color:#1e293b; font-size:11px; border-right:1px solid #e2e8f0;";
+            nameTd.textContent = row.name;
+            tr.appendChild(nameTd);
+
+            // Week cells
+            row.weeks.forEach(val => {
+              const c = getColor(val);
+              const td = document.createElement("td");
+              td.style.cssText = `padding:10px 4px; text-align:center; background:${c.bg}; color:${c.text}; font-weight:700; font-size:11px; border-right:1px solid rgba(255,255,255,0.15); transition:transform 0.15s, box-shadow 0.15s; cursor:default;`;
+              td.textContent = c.label;
+              td.title = val !== null ? `Score: ${val}` : "No data";
+              td.addEventListener("mouseenter", () => { td.style.transform = "scale(1.12)"; td.style.boxShadow = "0 2px 8px rgba(0,0,0,0.18)"; td.style.zIndex = "10"; td.style.position = "relative"; });
+              td.addEventListener("mouseleave", () => { td.style.transform = ""; td.style.boxShadow = ""; td.style.zIndex = ""; td.style.position = ""; });
+              tr.appendChild(td);
+            });
+
+            // Average cell
+            const avgTd = document.createElement("td");
+            avgTd.style.cssText = `padding:10px 6px; text-align:center; background:${avgColor.bg}; color:${avgColor.text}; font-weight:800; font-size:11px; border-left:2px solid #cbd5e1;`;
+            avgTd.textContent = avg !== null ? avg.toFixed(2) : "N/A";
+            tr.appendChild(avgTd);
+
+            tbody.appendChild(tr);
+          });
+
+          // Week average footer row
+          const footerTr = document.createElement("tr");
+          footerTr.style.cssText = "background:#f1f5f9; border-top:2px solid #cbd5e1;";
+          const footLabel = document.createElement("td");
+          footLabel.style.cssText = "padding:8px 12px; font-weight:700; color:#475569; font-size:10px; text-transform:uppercase; letter-spacing:0.05em; border-right:1px solid #e2e8f0;";
+          footLabel.textContent = "Weekly Avg";
+          footerTr.appendChild(footLabel);
+
+          for (let w = 0; w < 7; w++) {
+            const vals = heatData.map(r => r.weeks[w]).filter(v => v !== null);
+            const wAvg = vals.length ? (vals.reduce((a, b) => a + b, 0) / vals.length) : null;
+            const c = getColor(wAvg);
+            const td = document.createElement("td");
+            td.style.cssText = `padding:8px 4px; text-align:center; background:${c.bg}; color:${c.text}; font-weight:800; font-size:11px; border-right:1px solid #e2e8f0;`;
+            td.textContent = wAvg !== null ? wAvg.toFixed(2) : "—";
+            footerTr.appendChild(td);
+          }
+
+          // Overall avg footer cell
+          const allVals = heatData.flatMap(r => r.weeks.filter(v => v !== null));
+          const overallAvg = allVals.reduce((a, b) => a + b, 0) / allVals.length;
+          const oc = getColor(overallAvg);
+          const overallTd = document.createElement("td");
+          overallTd.style.cssText = `padding:8px 6px; text-align:center; background:${oc.bg}; color:${oc.text}; font-weight:800; font-size:11px; border-left:2px solid #cbd5e1;`;
+          overallTd.textContent = overallAvg.toFixed(2);
+          footerTr.appendChild(overallTd);
+          tbody.appendChild(footerTr);
+        })();
+      </script>
+    </section>
+
+    <section class="bg-white p-8 sm:p-12 rounded-xl shadow-md border border-slate-200 card-shadow page-break"
+      id="washrooms">
+      <h2
+        class="font-tech text-2xl font-bold uppercase text-railway-900 tracking-wider mb-6 flex items-center gap-3 pb-2 border-b-2 border-railway-600">
+        <span class="w-2 h-6 bg-railway-600 rounded-full"></span> 6.
+        Individual Washroom Performance Metrics
+      </h2>
+      <p class="text-slate-600 mb-8 text-justify">
+        The platform breaks down the macro-level station health into
+        micro-level asset profiles. The graphs below reflect isolated daily
+        tracking trends for specific washrooms, providing an empirical
+        baseline for evaluating localized facility deterioration.
+      </p>
+
+      <div id="washroom-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+
+      <!-- Deep Data Insights -->
+      <div class="mt-10 border-t border-slate-200 pt-8">
+        <h3 class="font-semibold text-slate-800 text-lg mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-magnifying-glass-chart text-railway-600"></i> Deep Data Insights
+        </h3>
+        <ul class="space-y-4 text-sm text-slate-700">
+
+          <li class="flex gap-3 p-4 bg-red-50 border border-red-100 rounded-xl">
+            <span
+              class="mt-0.5 shrink-0 w-7 h-7 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs">↓</span>
+            <div class="text-justify">
+              <strong class="text-red-800">Critical Decline — Bombay Side Platform-1 End Washroom:</strong>
+              This high-traffic platform washroom showed sharp deterioration.
+              It dropped from 6.71 (Day 16–30) to <span class="font-bold text-red-700">4.15 (Day 46–60)</span>.
+              The washroom entered the <strong>Poor</strong> zone and demands urgent scheduling reviews
+              and increased cleaning frequency.
+            </div>
+          </li>
+
+          <li class="flex gap-3 p-4 bg-emerald-50 border border-emerald-100 rounded-xl">
+            <span
+              class="mt-0.5 shrink-0 w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">★</span>
+            <div class="text-justify">
+              <strong class="text-emerald-800">Top Performers — Office Ground Floor Washroom 2:</strong>
+              This washroom delivered the strongest performance, posting scores of 8.85 (Day 1–15) and
+              <span class="font-bold text-emerald-700">8.74 (Day 16–30)</span> — among the highest averages
+              of any washroom in the entire period. It consistently maintained the <strong>Excellent</strong> band,
+              confirming reliable operational standards.
+            </div>
+          </li>
+
+          <li class="flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+            <span
+              class="mt-0.5 shrink-0 w-7 h-7 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs">~</span>
+            <div class="text-justify">
+              <strong class="text-amber-800">Fluctuating Standards — Handi Cap Platform-1:</strong>
+              This washroom experienced heavy variance, improving from 5.87 (Day 1-15) to a peak of
+              <span class="font-bold text-amber-700">7.23 (Day 16–30)</span>, before
+              crashing downward to 5.40 (Day 31–45). The sharp inconsistency suggests that cleaning standards need strict reinforcement to
+              maintain hygiene over long periods.
+            </div>
+          </li>
+
+          <li class="flex gap-3 p-4 bg-slate-50 border border-slate-200 rounded-xl">
+            <span
+              class="mt-0.5 shrink-0 w-7 h-7 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-xs">!</span>
+            <div class="text-justify">
+              <strong class="text-slate-800">Severe Monitoring Gaps — Manish Nagar1 &amp; Office Washrooms:</strong>
+              Multiple locations exhibit severe data blackouts. <code>manish nagar1</code> reported 0 scores over the entire 60 days. 
+              Additionally, virtually all Office Floor washrooms abruptly stopped recording data for the latter half of the reporting period (Days 31-60), demanding an urgent compliance audit.
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+
+    <section class="bg-white p-0 rounded-xl shadow-md border border-slate-200 card-shadow page-break overflow-hidden"
+      id="cleaners">
+      <div style="padding: 28px 36px 20px 36px;">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 6px;">
+          <span
+            style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #0f172a; color: #fff; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 20px; border-radius: 6px;">7</span>
+          <h2
+            style="margin: 0; font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700; color: #0f172a; letter-spacing: 0.5px; text-transform: uppercase;">
+            Cleaner Performance & Accountability Analysis
+          </h2>
+        </div>
+        <p style="margin: 0; font-size: 14px; color: #64748b; font-weight: 500;">
+          Performance Quadrant: Productivity vs AI Quality Score
+        </p>
+      </div>
+
+      <div style="margin: 0 36px; padding: 14px 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+        <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.6;">
+          This quadrant evaluates cleaner accountability by mapping task productivity against AI-assessed hygiene
+          quality.<br />
+          <strong style="color: #0f172a;">Top-right quadrant represents the ideal performance zone.</strong>
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 24px; padding: 24px 36px 0 36px;">
+        <div style="flex: 1; min-width: 0;">
+          <div style="text-align: center; margin-bottom: 8px;">
+            <span style="font-size: 11px; font-weight: 700; color: #0f172a; text-transform: uppercase;">AI QUALITY SCORE
+              <span style="font-weight: 400; color: #64748b; text-transform: none;">(Average)</span></span>
+          </div>
+
+          <div style="position: relative; width: 100%; padding-left: 55px; padding-bottom: 20px;">
+            <div
+              style="position: absolute; left: 0; top: 0; bottom: 20px; width: 45px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; padding-right: 10px; font-size: 11px; font-weight: 600; color: #0f172a;">
+              <div style="display: flex; align-items: center; gap: 4px;"><span
+                  style="color: #16a34a; font-weight: 700; font-size: 10px;">High</span> 10</div>
+              <div style="display: flex; align-items: center; gap: 4px;"><span
+                  style="color: #d97706; font-weight: 700; font-size: 10px;">Medium</span> 7.5</div>
+              <div style="display: flex; align-items: center; gap: 4px;"><span
+                  style="color: #dc2626; font-weight: 700; font-size: 10px;">Low</span> 0</div>
+            </div>
+
+            <div
+              style="position: absolute; left: -25px; top: 50%; transform: rotate(-90deg) translateX(-50%); transform-origin: left center; font-size: 11px; font-weight: 700; color: #0f172a; text-transform: uppercase; white-space: nowrap; z-index: 5; text-align: center;">
+              AI Quality Score<br /><span
+                style="font-weight: 400; color: #64748b; font-size: 10px; text-transform: none;">(Average / 10)</span>
+            </div>
+
+            <div
+              style="position: relative; border-left: 1px solid #94a3b8; border-bottom: 1px solid #94a3b8; height: 420px; background: #fff;">
+
+              <div
+                style="position: absolute; top: 0; left: 0; width: 50%; height: 50%; background: #ffffff; border-right: 1px dashed #cbd5e1; border-bottom: 1px dashed #cbd5e1; box-sizing: border-box;">
+              </div>
+              <div
+                style="position: absolute; top: 0; left: 50%; width: 50%; height: 50%; background: #f0fdf4; border-bottom: 1px dashed #cbd5e1; box-sizing: border-box;">
+              </div>
+              <div
+                style="position: absolute; top: 50%; left: 0; width: 50%; height: 50%; background: #fef2f2; border-right: 1px dashed #cbd5e1; box-sizing: border-box;">
+              </div>
+              <div
+                style="position: absolute; top: 50%; left: 50%; width: 50%; height: 50%; background: #fffbeb; box-sizing: border-box;">
+              </div>
+
+              <div
+                style="position: absolute; top: 20px; left: 20px; display: flex; align-items: flex-start; gap: 10px; z-index: 10;">
+                <div
+                  style="width: 36px; height: 36px; border-radius: 50%; background: #fff; border: 1px solid #16a34a; display: flex; align-items: center; justify-content: center;">
+                  <i class="fa-solid fa-star" style="color: #16a34a; font-size: 16px;"></i>
+                </div>
+                <div>
+                  <div
+                    style="font-size: 11px; font-weight: 800; color: #16a34a; text-transform: uppercase; line-height: 1.2;">
+                    High Quality</div>
+                  <div
+                    style="font-size: 11px; font-weight: 800; color: #0f172a; text-transform: uppercase; line-height: 1.2;">
+                    Low Productivity</div>
+                  <div style="font-size: 10px; color: #475569; margin-top: 2px; line-height: 1.3;">Consistent
+                    quality,<br />needs productivity boost</div>
+                </div>
+              </div>
+
+              <div
+                style="position: absolute; top: 20px; right: 20px; display: flex; align-items: flex-start; gap: 10px; z-index: 10; text-align: right; flex-direction: row-reverse;">
+                <div
+                  style="width: 36px; height: 36px; border-radius: 50%; background: #fff; border: 1px solid #16a34a; display: flex; align-items: center; justify-content: center;">
+                  <i class="fa-solid fa-trophy" style="color: #16a34a; font-size: 16px;"></i>
+                </div>
+                <div>
+                  <div
+                    style="font-size: 11px; font-weight: 800; color: #16a34a; text-transform: uppercase; line-height: 1.2;">
+                    High Quality</div>
+                  <div
+                    style="font-size: 11px; font-weight: 800; color: #16a34a; text-transform: uppercase; line-height: 1.2;">
+                    High Productivity</div>
+                  <div style="font-size: 10px; color: #16a34a; margin-top: 2px; line-height: 1.3;">Ideal Zone<br />Top
+                    Performers</div>
+                </div>
+              </div>
+
+              <div
+                style="position: absolute; bottom: 20px; left: 20px; display: flex; align-items: flex-start; gap: 10px; z-index: 10;">
+                <div
+                  style="width: 36px; height: 36px; border-radius: 50%; background: #fff; border: 1px solid #dc2626; display: flex; align-items: center; justify-content: center;">
+                  <i class="fa-solid fa-chart-line" style="color: #dc2626; font-size: 16px;"></i>
+                </div>
+                <div>
+                  <div
+                    style="font-size: 11px; font-weight: 800; color: #dc2626; text-transform: uppercase; line-height: 1.2;">
+                    Low Quality</div>
+                  <div
+                    style="font-size: 11px; font-weight: 800; color: #dc2626; text-transform: uppercase; line-height: 1.2;">
+                    Low Productivity</div>
+                  <div style="font-size: 10px; color: #dc2626; margin-top: 2px; line-height: 1.3;">Needs
+                    immediate<br />attention & training</div>
+                </div>
+              </div>
+
+              <div
+                style="position: absolute; bottom: 20px; right: 20px; display: flex; align-items: flex-start; gap: 10px; z-index: 10; text-align: right; flex-direction: row-reverse;">
+                <div
+                  style="width: 36px; height: 36px; border-radius: 50%; background: #fff; border: 1px solid #d97706; display: flex; align-items: center; justify-content: center;">
+                  <i class="fa-solid fa-chalkboard-user" style="color: #d97706; font-size: 16px;"></i>
+                </div>
+                <div>
+                  <div
+                    style="font-size: 11px; font-weight: 800; color: #d97706; text-transform: uppercase; line-height: 1.2;">
+                    Low Quality</div>
+                  <div
+                    style="font-size: 11px; font-weight: 800; color: #d97706; text-transform: uppercase; line-height: 1.2;">
+                    High Productivity</div>
+                  <div style="font-size: 10px; color: #d97706; margin-top: 2px; line-height: 1.3;">High effort,
+                    needs<br />quality improvement</div>
+                </div>
+              </div>
+
+              <div id="cleaner-quadrant-points"></div>
+            </div>
+
+            <div
+              style="display: flex; justify-content: space-between; margin-top: 6px; font-size: 11px; font-weight: 600; color: #0f172a;">
+              <div style="display: flex; flex-direction: column; align-items: flex-start; transform: translateX(-50%);">
+                <span>0</span>
+                <span style="color: #dc2626; font-size: 10px; font-weight: 700; margin-top: 4px;">Low</span>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <span>50</span>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: flex-end; transform: translateX(50%);">
+                <span>100</span>
+                <span style="color: #16a34a; font-size: 10px; font-weight: 700; margin-top: 4px;">High</span>
+              </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 10px;">
+              <span style="font-size: 11px; font-weight: 700; color: #0f172a; text-transform: uppercase;">PRODUCTIVITY
+                <span style="font-weight: 400; color: #64748b; text-transform: none;">(Tasks Completed)</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div style="width: 320px; flex-shrink: 0;">
+          <div style="margin-bottom: 12px;">
+            <span style="font-size: 13px; font-weight: 700; color: #0f172a; text-transform: uppercase;">Cleaner
+              Performance Summary</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+
+            <div id="cleaner-cards-container" style="display: flex; flex-direction: column; gap: 8px;"></div>
+          </div>
+
+          <div
+            style="margin-top: 16px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #fff;">
+            <div style="padding: 12px 14px; border-bottom: 1px solid #e2e8f0;">
+              <span style="font-size: 12px; font-weight: 700; color: #0f172a; text-transform: uppercase;">
+                Key Insights
+              </span>
+            </div>
+            <div id="cleaner-insights-container" style="padding: 14px; display: flex; flex-direction: column; gap: 12px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="display: flex; justify-content: space-between; align-items: center; padding: 16px 36px 20px 36px; margin-top: 24px; border-top: 1px solid #e2e8f0;">
+        <div style="display: flex; align-items: flex-start; gap: 10px;">
+          <span
+            style="width: 22px; height: 22px; border-radius: 50%; background: #3b82f6; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+            <i class="fa-solid fa-info" style="color: #fff; font-size: 10px;"></i>
+          </span>
+          <span style="font-size: 11px; color: #475569; line-height: 1.5;">
+            AI Quality Score is the average score (0–10) generated from AI audits.<br />
+            Productivity is measured based on total tasks completed in the selected period.
+          </span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+          <i class="fa-regular fa-calendar" style="color: #64748b; font-size: 14px;"></i>
+          <span style="font-size: 11px; color: #0f172a; font-weight: 600;">
+            Analysis Period: May 20 – Jul 08, 2025 (Last 7 Weeks)
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function() {
+        const cleanersData = [
+          { name: "Priyanka Tiwari", score: 8.55, tasks: 85, color: "#16a34a", bg: "#dcfce7", border: "#bbf7d0" },
+          { name: "Joti Madavi", score: 8.34, tasks: 60, color: "#8b5cf6", bg: "#f3e8ff", border: "#e9d5ff" },
+          { name: "Mangla Kavde", score: 6.31, tasks: 65, color: "#2563eb", bg: "#dbeafe", border: "#bfdbfe" }
+        ];
+
+        const MAX_TASKS = 100;
+        
+        function getTopPercent(score) {
+          if (score >= 7.5) {
+            return ((10 - score) / 2.5) * 50;
+          } else {
+            return 50 + ((7.5 - score) / 7.5) * 50;
+          }
+        }
+
+        const quadrantPointsContainer = document.getElementById("cleaner-quadrant-points");
+        const cardsContainer = document.getElementById("cleaner-cards-container");
+        const insightsContainer = document.getElementById("cleaner-insights-container");
+
+        cleanersData.forEach(c => {
+          // 1. Quadrant Point
+          let topP = getTopPercent(c.score);
+          let leftP = (c.tasks / MAX_TASKS) * 100;
+          if (leftP > 95) leftP = 95; // bound check
+          
+          let quadrantHtml = `
+            <div style="position: absolute; top: ${topP}%; left: ${leftP}%; display: flex; align-items: center; gap: 8px; transform: translate(-8px, -50%); z-index: 20;">
+              <div style="width: 16px; height: 16px; background: ${c.color}; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>
+              <div style="background: rgba(255,255,255,0.9); padding: 2px 6px; border-radius: 4px;">
+                <div style="font-size: 11px; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 4px;">
+                  <i class="fa-solid fa-user" style="color: ${c.color};"></i> ${c.name}
+                </div>
+                <div style="font-size: 9px; color: #64748b;">(AI Score: ${c.score})<br />Tasks: ${c.tasks}</div>
+              </div>
+            </div>`;
+          quadrantPointsContainer.innerHTML += quadrantHtml;
+
+          // 2. Summary Card
+          let badgeText = "Average<br />Score";
+          if(c.score >= 8.0) badgeText = "High<br />Quality";
+          else if(c.score < 7.0 && c.tasks < 10) badgeText = "Needs<br />Training";
+          else if(c.score < 7.0 && c.tasks > 20) badgeText = "Needs<br />Quality Focus";
+
+          let cardHtml = `
+            <div style="display: flex; align-items: center; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; gap: 12px;">
+              <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid ${c.border}; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fa-solid fa-user" style="color: ${c.color}; font-size: 14px;"></i>
+              </div>
+              <div style="flex: 1; min-width: 0;">
+                <div style="font-size: 13px; font-weight: 700; color: #0f172a;">${c.name}</div>
+                <div style="font-size: 11px; color: #64748b;">AI Score: ${c.score} &nbsp;|&nbsp; Tasks: ${c.tasks}</div>
+              </div>
+              <span style="padding: 4px 10px; border-radius: 6px; font-size: 10px; font-weight: 700; color: ${c.color}; background: ${c.bg}; white-space: nowrap; text-align: center;">
+                ${badgeText}
+              </span>
+            </div>`;
+          cardsContainer.innerHTML += cardHtml;
+        });
+
+        // 3. Insights
+        const highQualityCleaners = cleanersData.filter(c => c.score >= 8.0).length;
+        const needsTraining = cleanersData.filter(c => c.score < 7.0 && c.tasks < 10).length;
+        const needsQualityFocus = cleanersData.filter(c => c.score < 7.0 && c.tasks >= 30).length;
+        
+        insightsContainer.innerHTML = `
+          <div style="display: flex; align-items: flex-start; gap: 10px;">
+            <span style="width: 20px; height: 20px; border-radius: 50%; border: 1px solid #bbf7d0; background: #dcfce7; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+              <i class="fa-solid fa-check" style="color: #16a34a; font-size: 10px;"></i>
+            </span>
+            <span style="font-size: 11px; color: #0f172a; line-height: 1.4;">${highQualityCleaners} cleaners show high quality and good productivity.</span>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 10px;">
+            <span style="width: 20px; height: 20px; border-radius: 50%; border: 1px solid #fde68a; background: #fef3c7; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+              <i class="fa-solid fa-triangle-exclamation" style="color: #d97706; font-size: 10px;"></i>
+            </span>
+            <span style="font-size: 11px; color: #0f172a; line-height: 1.4;">${needsQualityFocus} cleaners have high productivity but need better quality focus.</span>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 10px;">
+            <span style="width: 20px; height: 20px; border-radius: 50%; border: 1px solid #fecaca; background: #fee2e2; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+              <i class="fa-solid fa-exclamation" style="color: #dc2626; font-size: 10px;"></i>
+            </span>
+            <span style="font-size: 11px; color: #0f172a; line-height: 1.4;">${needsTraining} cleaners have very low tasks and require immediate training.</span>
+          </div>
+        `;
+
+      })();
+    </script>
+
+    <section class="bg-white p-8 sm:p-12 rounded-xl shadow-md border border-slate-200 card-shadow page-break"
+      id="before-after">
+      <h2
+        class="font-tech text-2xl font-bold uppercase text-railway-900 tracking-wider mb-6 flex items-center gap-3 pb-2 border-b-2 border-railway-600">
+        <span class="w-2 h-6 bg-railway-600 rounded-full"></span> 8. Visual
+        Before and After Impact
+      </h2>
+      <div class="space-y-4 text-slate-700 leading-relaxed text-justify mb-8">
+        <p>
+          This section provides a visual comparison of washroom conditions
+          before and after deployment of the SAAFAI AI-Based Sanitation
+          Monitoring System. The photographic evidence helps demonstrate the
+          effectiveness of continuous monitoring, cleaner accountability,
+          digital audits, and real-time maintenance interventions.
+        </p>
+        <p>
+          The baseline images represent the conditions observed during the
+          pre-pilot assessment survey, while the corresponding post-deployment
+          images document measurable improvements in cleanliness, stain
+          reduction, fixture maintenance, floor condition, and overall hygiene
+          standards.
+        </p>
+        <div class="border-l-4 border-emerald-500 pl-4 bg-emerald-50/50 py-3 rounded-r-lg font-medium text-slate-800">
+          Expected improvements include better housekeeping discipline, faster
+          issue resolution, improved washroom appearance, enhanced passenger
+          experience, and higher sanitation compliance scores.
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Handicap Washroom -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
+          <div class="bg-slate-50 px-4 py-3 border-b border-slate-200">
+            <h3 class="font-semibold text-slate-800">Handicap Washroom</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+            <div>
+              <div class="text-sm font-semibold text-red-600 mb-2 uppercase tracking-wide">
+                <i class="fa-solid fa-camera mr-1"></i> Before (Baseline)
+              </div>
+              <div
+                class="w-full h-48 bg-slate-200 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300 text-slate-400 font-bold">
+                <img src="https://plain-apac-prod-public.komododecks.com/202607/14/gpqvVNh3sHOFHEesiMDx/image.webp"
+                  alt="" class="w-full h-full object-cover rounded-lg" />
+              </div>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-emerald-600 mb-2 uppercase tracking-wide">
+                <i class="fa-solid fa-camera mr-1"></i> After (Post-Deployment)
+              </div>
+              <div
+                class="w-full h-48 bg-slate-200 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300 text-slate-400 font-bold">
+                <img
+                  src="https://storage.googleapis.com/saaf-ai-images-node-hostings/after_photos/1781507447002-8re96wtu.webp"
+                  alt="" class="w-full h-full object-cover rounded-lg" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RPF Toilet -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
+          <div class="bg-slate-50 px-4 py-3 border-b border-slate-200">
+            <h3 class="font-semibold text-slate-800">RPF Toilet</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+            <div>
+              <div class="text-sm font-semibold text-red-600 mb-2 uppercase tracking-wide">
+                <i class="fa-solid fa-camera mr-1"></i> Before (Baseline)
+              </div>
+              <div
+                class="w-full h-48 bg-slate-200 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300 text-slate-400 font-bold">
+                <img src="https://plain-apac-prod-public.komododecks.com/202607/14/LNxRd628vO8HYGKtUpTe/image.jpg"
+                  alt="" class="w-full h-full object-cover rounded-lg" />
+              </div>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-emerald-600 mb-2 uppercase tracking-wide">
+                <i class="fa-solid fa-camera mr-1"></i> After (Post-Deployment)
+              </div>
+              <div
+                class="w-full h-48 bg-slate-200 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300 text-slate-400 font-bold">
+                <img
+                  src="https://storage.googleapis.com/saaf-ai-images-node-hostings/before_photos/1782454820608-qo6vda09.webp"
+                  alt="" class="w-full h-full object-cover rounded-lg" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Urinal Unit A -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
+          <div class="bg-slate-50 px-4 py-3 border-b border-slate-200">
+            <h3 class="font-semibold text-slate-800">Urinal Unit A</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+            <div>
+              <div class="text-sm font-semibold text-red-600 mb-2 uppercase tracking-wide">
+                <i class="fa-solid fa-camera mr-1"></i> Before (Baseline)
+              </div>
+              <div
+                class="w-full h-48 bg-slate-200 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300 text-slate-400 font-bold">
+                <img src="https://plain-apac-prod-public.komododecks.com/202607/14/w0ISDT67vh1UbZXWMLsK/image.jpg"
+                  alt="" class="w-full h-full object-cover rounded-lg" />
+              </div>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-emerald-600 mb-2 uppercase tracking-wide">
+                <i class="fa-solid fa-camera mr-1"></i> After (Post-Deployment)
+              </div>
+              <div
+                class="w-full h-48 bg-slate-200 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300 text-slate-400 font-bold">
+                <img src="https://plain-apac-prod-public.komododecks.com/202607/14/i3BK5IrkDrMGe3pVQOq8/image.jpg"
+                  alt="" class="w-full h-full object-cover rounded-lg" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indian Pan Unit A -->
+        <div class="border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm">
+          <div class="bg-slate-50 px-4 py-3 border-b border-slate-200">
+            <h3 class="font-semibold text-slate-800">Indian Pan Unit A</h3>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+            <div>
+              <div class="text-sm font-semibold text-red-600 mb-2 uppercase tracking-wide">
+                <i class="fa-solid fa-camera mr-1"></i> Before (Baseline)
+              </div>
+              <div
+                class="w-full h-48 bg-slate-200 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300 text-slate-400 font-bold">
+                <img
+                  src="https://storage.googleapis.com/saaf-ai-images-node-hostings/before_photos/1783925722164-l67so6a9.webp"
+                  alt="" class="w-full h-full object-cover rounded-lg" />
+              </div>
+            </div>
+            <div>
+              <div class="text-sm font-semibold text-emerald-600 mb-2 uppercase tracking-wide">
+                <i class="fa-solid fa-camera mr-1"></i> After (Post-Deployment)
+              </div>
+              <div
+                class="w-full h-48 bg-slate-200 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300 text-slate-400 font-bold">
+                <img
+                  src="https://storage.googleapis.com/saaf-ai-images-node-hostings/after_photos/1781852623239-zxsv3z2z.webp"
+                  alt="" class="w-full h-full object-cover rounded-lg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white p-8 sm:p-12 rounded-xl shadow-md border border-slate-200 card-shadow page-break"
+      id="impact">
+      <h2
+        class="font-tech text-2xl font-bold uppercase text-railway-900 tracking-wider mb-6 flex items-center gap-3 pb-2 border-b-2 border-railway-600">
+        <span class="w-2 h-6 bg-railway-600 rounded-full"></span> 9.
+        Operational Business Impact
+      </h2>
+      <p class="text-slate-700 mb-8 text-justify">
+        Integrating the SAAFAI intelligence platform transitions the facility
+        management strategy from a highly fallible, reactive stance to a
+        precision, data-driven methodology. The ROI metrics below highlight
+        the direct structural benefits to railway administration.
+      </p>
+
+      <div class="overflow-x-auto border border-slate-200 rounded-xl shadow-sm">
+        <table class="min-w-full divide-y divide-slate-200 m-0 text-sm text-left">
+          <thead class="bg-slate-800 text-white font-bold uppercase text-[11px] tracking-wider">
+            <tr>
+              <th class="px-6 py-4">Operational Metric</th>
+              <th class="px-6 py-4">Before SAAFAI (Legacy)</th>
+              <th class="px-6 py-4 text-sky-400">After SAAFAI (Platform)</th>
+              <th class="px-6 py-4 text-emerald-400">Measured Improvement</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 bg-white text-slate-700 font-medium">
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4 font-bold text-slate-900">
+                Manual Register
+              </td>
+              <td class="px-6 py-4 bg-red-50/50 text-red-700">
+                Paper log books (Prone to falsification)
+              </td>
+              <td class="px-6 py-4 bg-emerald-50/50 text-emerald-700">
+                100% Digital Workflows
+              </td>
+              <td class="px-6 py-4">
+                <i class="fa-solid fa-arrow-trend-up text-emerald-500 mr-1"></i>
+                Data Integrity Assured
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4 font-bold text-slate-900">
+                Cleaning Verification
+              </td>
+              <td class="px-6 py-4 bg-red-50/50 text-red-700">
+                Manual Inspection (Subjective)
+              </td>
+              <td class="px-6 py-4 bg-emerald-50/50 text-emerald-700">
+                AI-Verified Vision Analysis
+              </td>
+              <td class="px-6 py-4">
+                <i class="fa-solid fa-arrow-trend-up text-emerald-500 mr-1"></i>
+                Immutable Audit Trail
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4 font-bold text-slate-900">
+                Monitoring Cadence
+              </td>
+              <td class="px-6 py-4 bg-red-50/50 text-red-700">
+                Periodic Spot Checks
+              </td>
+              <td class="px-6 py-4 bg-emerald-50/50 text-emerald-700">
+                Real-Time Telemetry
+              </td>
+              <td class="px-6 py-4">
+                <i class="fa-solid fa-arrow-trend-up text-emerald-500 mr-1"></i>
+                Continuous Operations Oversight
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4 font-bold text-slate-900">
+                Labor Accountability
+              </td>
+              <td class="px-6 py-4 bg-red-50/50 text-red-700">
+                Limited to Group Level
+              </td>
+              <td class="px-6 py-4 bg-emerald-50/50 text-emerald-700">
+                Individual Granular Tracking
+              </td>
+              <td class="px-6 py-4">
+                <i class="fa-solid fa-arrow-trend-up text-emerald-500 mr-1"></i>
+                Complete Staff Mapping
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-6 py-4 font-bold text-slate-900">
+                Enterprise Visibility
+              </td>
+              <td class="px-6 py-4 bg-red-50/50 text-red-700">
+                Low, Fragmented Data Silos
+              </td>
+              <td class="px-6 py-4 bg-emerald-50/50 text-emerald-700">
+                Centralized Live Dashboard
+              </td>
+              <td class="px-6 py-4">
+                <i class="fa-solid fa-arrow-trend-up text-emerald-500 mr-1"></i>
+                Instant KPI Generation
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Global defaults for Chart.js
+      Chart.defaults.color = "#94a3b8";
+      Chart.defaults.font.family = "'Inter', sans-serif";
+
+      // --- 6. INDIVIDUAL WASHROOM PERFORMANCE METRICS (Dynamic Generation) ---
+      const washroomConfigs = [
+        {
+          name: "Bombay Side Platform-1 End Washroom",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [6.34, 6.71, 5.96, 4.15],
+          current: 4.15,
+        },
+        {
+          name: "Handi Cap Platform-1",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [5.87, 7.23, 5.40, 5.50],
+          current: 5.50,
+        },
+        {
+          name: "manish nagar1",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [5.0, 5.0, 5.0, 5.0],
+          current: 5.0,
+        },
+        {
+          name: "Office Floor-1 - Washroom 1",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [8.73, 8.70, 8.65, 8.60],
+          current: 8.60,
+        },
+        {
+          name: "Office Floor-1 Washroom 2",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [8.60, 8.63, 8.60, 8.55],
+          current: 8.55,
+        },
+        {
+          name: "Office Floor-2 Washroom 1",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [8.53, 8.65, 8.60, 8.50],
+          current: 8.50,
+        },
+        {
+          name: "Office Floor-2 Washroom 2",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [8.57, 8.44, 8.40, 8.35],
+          current: 8.35,
+        },
+        {
+          name: "Office Floor-3 Washroom 1",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [7.53, 8.56, 8.50, 8.45],
+          current: 8.45,
+        },
+        {
+          name: "Office Floor-3 Washroom 2",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [8.20, 8.68, 8.65, 8.60],
+          current: 8.60,
+        },
+        {
+          name: "Office Ground Floor Washroom 1",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [8.23, 8.64, 8.60, 8.50],
+          current: 8.50,
+        },
+        {
+          name: "Office  Ground Floor Washroom 2",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [8.85, 8.74, 8.70, 8.65],
+          current: 8.65,
+        },
+        {
+          name: "Platform 1 near office",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [7.23, 6.90, 5.12, 6.80],
+          current: 6.80,
+        },
+        {
+          name: "Sleeper class waiting room washroom",
+          labels: ["Day 1–15", "Day 16–30", "Day 31–45", "Day 46–60"],
+          data: [8.53, 8.68, 8.23, 7.34],
+          current: 7.34,
+        },
+      ];
+
+      const container = document.getElementById("washroom-container");
+
+      washroomConfigs.forEach((config, index) => {
+        const isLast = index === washroomConfigs.length - 1;
+        const card = document.createElement("div");
+        // Center the last chart by spanning 2 columns
+        card.className = `bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-col ${isLast ? "md:col-span-2 md:max-w-xl md:mx-auto w-full" : ""}`;
+
+        card.innerHTML = `
+            <div class="flex justify-between items-start mb-3">
+                <h4 class="font-bold text-sm text-slate-800 truncate text-slate-900">${config.name}</h4>
+                <span class="px-2 py-0.5 bg-sky-50 text-sky-700 text-[10px] font-bold rounded border border-sky-100 uppercase">AI Monitored</span>
+            </div>
+            <div class="h-44 w-full"><canvas id="washroomChart${index + 1}"></canvas></div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center">
+                <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Current AI Rating</span>
+                <span class="text-lg font-bold text-sky-600">${config.current} <span class="text-slate-400 text-xs">/ 10</span></span>
+            </div>
+        `;
+        container.appendChild(card);
+
+        // Initialize mixed Bar + Trend Line Chart
+        const ctx = document
+          .getElementById(`washroomChart${index + 1}`)
+          .getContext("2d");
+        new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: config.labels,
+            datasets: [
+              {
+                type: "bar",
+                label: "Avg Rating (15-day)",
+                data: config.data,
+                backgroundColor: "rgba(2, 132, 199, 0.75)",
+                borderColor: "#0284c7",
+                borderWidth: 1,
+                borderRadius: 4,
+                barPercentage: 0.55,
+              },
+              {
+                type: "line",
+                label: "Trend",
+                data: config.data,
+                borderColor: "#f97316",
+                backgroundColor: "rgba(249, 115, 22, 0.1)",
+                borderWidth: 2.5,
+                borderDash: [5, 3],
+                pointBackgroundColor: "#f97316",
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                tension: 0.35,
+                fill: false,
+                spanGaps: true,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: true,
+                position: "top",
+                labels: {
+                  font: { size: 9 },
+                  color: "#64748b",
+                  boxWidth: 12,
+                  padding: 6,
+                },
+              },
+            },
+            scales: {
+              y: {
+                min: 0,
+                max: 10,
+                grid: { color: "#f1f5f9" },
+                ticks: { font: { size: 10 }, color: "#64748b", stepSize: 2 },
+              },
+              x: {
+                grid: { display: false },
+                ticks: {
+                  font: { size: 9 },
+                  color: "#64748b",
+                  maxRotation: 0,
+                  minRotation: 0,
+                },
+              },
+            },
+          },
+        });
+      });
+
+      // --- 7. Cleaner Performance Analysis Scatter Quadrant Plot ---
+      const cCtx = document.getElementById("cleanerPerformanceChart").getContext("2d");
+      const scatterData = [
+        { x: 58, y: 7.33, name: "Praful Chawhan", color: "#7b1fa2", align: "right" },
+        { x: 179, y: 6.87, name: "Puneet Hadke", color: "#2563eb", align: "top" },
+        { x: 2, y: 6.80, name: "Shailesh Phule", color: "#16a34a", align: "right" },
+        { x: 1, y: 5.90, name: "Prashant Helkure", color: "#d97706", align: "bottom" }
+      ];
+
+      new Chart(cCtx, {
+        type: "scatter",
+        data: {
+          datasets: [{
+            data: scatterData,
+            pointBackgroundColor: scatterData.map(d => d.color),
+            pointBorderColor: scatterData.map(d => d.color),
+            pointRadius: 6,
+            pointHoverRadius: 8,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 35,
+              bottom: 30,
+              left: 45,
+              right: 35
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  const p = context.raw;
+                  return `${p.name}: Score ${p.y.toFixed(2)}, Tasks ${p.x}`;
+                }
+              }
+            },
+            datalabels: {
+              anchor: "center",
+              align: context => context.raw.align || "right",
+              offset: 8,
+              color: "#374151",
+              font: {
+                weight: "bold",
+                size: 9.5,
+                family: "'Inter', sans-serif"
+              },
+              formatter: function (value) {
+                return [
+                  `👤 ${value.name}`,
+                  `(AI Score: ${value.y.toFixed(2)})`,
+                  `Tasks: ${value.x}`
+                ];
+              }
+            }
+          },
+          scales: {
+            y: {
+              min: 0,
+              max: 10,
+              grid: {
+                display: false,
+                drawBorder: false
+              },
+              ticks: {
+                stepSize: 2.5,
+                color: "#1e293b",
+                font: { weight: "bold", size: 10 },
+                callback: function (value) {
+                  if (value === 0 || Math.abs(value - 7.5) < 0.1 || value === 10) return value;
+                  return "";
+                }
+              }
+            },
+            x: {
+              min: 0,
+              max: 220,
+              grid: {
+                display: false,
+                drawBorder: false
+              },
+              ticks: {
+                stepSize: 110,
+                color: "#1e293b",
+                font: { weight: "bold", size: 10 },
+                callback: function (value) {
+                  if (value === 0 || value === 110 || value === 220) return value;
+                  return "";
+                }
+              }
+            }
+          }
+        },
+        plugins: [
+          ChartDataLabels,
+          {
+            id: 'quadrantBackgrounds',
+            beforeDraw: function (chart) {
+              const ctx = chart.ctx;
+              const xAxis = chart.scales.x;
+              const yAxis = chart.scales.y;
+              const chartArea = chart.chartArea;
+
+              const xCenter = xAxis.getPixelForValue(110);
+              const yCenter = yAxis.getPixelForValue(7.5);
+
+              // 1. Fill Quadrants with background colors
+              // Top-Left (High Quality, Low Productivity)
+              ctx.fillStyle = 'rgba(241, 245, 249, 0.4)';
+              ctx.fillRect(chartArea.left, chartArea.top, xCenter - chartArea.left, yCenter - chartArea.top);
+
+              // Top-Right (High Quality, High Productivity)
+              ctx.fillStyle = 'rgba(240, 253, 244, 0.4)';
+              ctx.fillRect(xCenter, chartArea.top, chartArea.right - xCenter, yCenter - chartArea.top);
+
+              // Bottom-Left (Low Quality, Low Productivity)
+              ctx.fillStyle = 'rgba(254, 242, 242, 0.4)';
+              ctx.fillRect(chartArea.left, yCenter, xCenter - chartArea.left, chartArea.bottom - yCenter);
+
+              // Bottom-Right (Low Quality, High Productivity)
+              ctx.fillStyle = 'rgba(255, 251, 235, 0.4)';
+              ctx.fillRect(xCenter, yCenter, chartArea.right - xCenter, chartArea.bottom - yCenter);
+
+              // 2. Draw Quadrant Dashed Dividers
+              ctx.save();
+              ctx.strokeStyle = '#cbd5e1';
+              ctx.lineWidth = 1.5;
+              ctx.setLineDash([5, 5]);
+
+              // Horizontal line at Y=7.5
+              ctx.beginPath();
+              ctx.moveTo(chartArea.left, yCenter);
+              ctx.lineTo(chartArea.right, yCenter);
+              ctx.stroke();
+
+              // Vertical line at X=110
+              ctx.beginPath();
+              ctx.moveTo(xCenter, chartArea.top);
+              ctx.lineTo(xCenter, chartArea.bottom);
+              ctx.stroke();
+
+              ctx.restore();
+
+              // 3. Draw Solid Axis lines with arrows
+              ctx.save();
+              ctx.strokeStyle = '#475569';
+              ctx.lineWidth = 2;
+
+              // Y-axis line
+              ctx.beginPath();
+              ctx.moveTo(chartArea.left, chartArea.bottom);
+              ctx.lineTo(chartArea.left, chartArea.top - 15);
+              ctx.stroke();
+
+              // Y-axis arrow
+              ctx.fillStyle = '#475569';
+              ctx.beginPath();
+              ctx.moveTo(chartArea.left - 4, chartArea.top - 15);
+              ctx.lineTo(chartArea.left, chartArea.top - 23);
+              ctx.lineTo(chartArea.left + 4, chartArea.top - 15);
+              ctx.fill();
+
+              // X-axis line
+              ctx.beginPath();
+              ctx.moveTo(chartArea.left, chartArea.bottom);
+              ctx.lineTo(chartArea.right + 15, chartArea.bottom);
+              ctx.stroke();
+
+              // X-axis arrow
+              ctx.beginPath();
+              ctx.moveTo(chartArea.right + 15, chartArea.bottom - 4);
+              ctx.lineTo(chartArea.right + 23, chartArea.bottom);
+              ctx.lineTo(chartArea.right + 15, chartArea.bottom + 4);
+              ctx.fill();
+
+              // 4. Draw Custom Axis labels (High, Medium, Low)
+              ctx.font = 'bold 11px sans-serif';
+              ctx.textBaseline = 'middle';
+
+              // Y-axis helper labels
+              ctx.textAlign = 'right';
+              ctx.fillStyle = '#16a34a'; // Green for High
+              ctx.fillText('High', chartArea.left - 25, yAxis.getPixelForValue(10));
+
+              ctx.fillStyle = '#d97706'; // Amber for Medium
+              ctx.fillText('Medium', chartArea.left - 25, yAxis.getPixelForValue(7.5));
+
+              ctx.fillStyle = '#dc2626'; // Red for Low
+              ctx.fillText('Low', chartArea.left - 25, yAxis.getPixelForValue(0));
+
+              // X-axis helper labels
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'top';
+              ctx.fillStyle = '#dc2626'; // Red for Low
+              ctx.fillText('Low', xAxis.getPixelForValue(0), chartArea.bottom + 18);
+
+              ctx.fillStyle = '#16a34a'; // Green for High
+              ctx.fillText('High', xAxis.getPixelForValue(220), chartArea.bottom + 18);
+
+              ctx.restore();
+            }
+          }
+        ]
+      });
+    });
+  </script>
+</body>
+
+</html>
